@@ -173,7 +173,7 @@ header {
 
 }
 
-@media (max-device-width: 1100px){
+@media (max-width: 1100px){
 
 	.engarde {
 		display: none;
@@ -181,7 +181,7 @@ header {
 
 }
 
-@media (max-device-width: 650px){
+@media (max-width: 650px){
 
 	.header-address {
 
