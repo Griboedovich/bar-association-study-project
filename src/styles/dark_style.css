@@ -46,7 +46,7 @@ main {
 
 body {
 	margin: 0; 
-	background-color: #e5e5e5;
+	background-color: #3c3c3c;
 }
 
 /*================ End Body Block ==============*/
@@ -54,17 +54,16 @@ body {
 /*================ Header Block ==================*/
 
 header {
-	color: black;
-
-	margin: 10px;
-	padding: 10px;
-	background: linear-gradient( to bottom, white, #357ea2);
+	color: white;
+	margin: 20px;
+	padding: 20px;
+	background: linear-gradient( to bottom, #030303, #1d4a60);
 	/*background-color: #f2dab8;*/
 	border-radius: 20px;
 
 	border: 4px solid black;
 
-	font-family: "Verdana";
+	
 
 }
 
@@ -86,7 +85,7 @@ header {
 
 	margin-left: 20px;
 
-	height: 65px;
+	height: 100px;
 
 	/*justify-self: start;*/
 }
@@ -100,27 +99,21 @@ header {
 
 .engarde{
 	
-	margin-left: 10px;
+	margin-left: 20px;
 
 }
 
 .engarde-name {
 	
-	font-size: 35px;
+	font-size: 64px;
 	
 	line-height: 0.7;
 
-	text-align: left;
 }
 
 .engarde-prefix {
 
-	font-weight: bold;
-
-	font-size: 13.85px;
-
-	position: relative;
-	left: 3px;
+	font-size: 27px;
 
 }
 
@@ -140,35 +133,31 @@ header {
 
 }
 
-.header-address p {
-	margin: 5px;
-}
-
 .nav-menu {
 
 	display: flex;
 	justify-content: space-between;
 
-
-}
-
-.nav-menu a:link , a:visited {
-	color: black;
-
-	text-decoration: none;
 }
 
 .nav-menu .menu-element{
 
 	padding: 10px;
 
+	/*border: 3px solid black;*/
+
+	border-color: black;
+
+	border-radius: 20px;
+
+	border-width: 2px;
+
+	border-style: solid;
+
 	width: 200px;
 
 	text-align: center;
 
-	border: 3px solid black;
-
-	border-radius: 20px;
 }
 
 /*================ End Header Block ==============*/
