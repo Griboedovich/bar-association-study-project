@@ -154,7 +154,7 @@ header {
 	width: 100%;
 
 	margin-left: 20px;
-
+	margin-right: 20px;
 }
 
 .nav-menu a:link , a:visited {
@@ -167,11 +167,57 @@ header {
 
 	text-align: center;
 
-	line-height: 1.5;
-	
 	margin: 10px;
 
+	display:flex;
+	align-items: center;
+
 }
+
+.nav-menu ul{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+	display: flex;
+	justify-content: space-between;
+
+	width: 100%;
+
+	margin-left: 20px;
+	margin-right: 20px;
+
+	/*gap:*/
+
+	/*Закоментировать*/
+	display: none;
+
+	transition: 0.5s;
+
+}
+
+.nav-menu ul li{
+
+	text-align: center;
+
+	margin: 10px;
+
+	display:flex;
+	align-items: center;
+
+}
+
+/*Бургер меню по дефолту*/
+
+/*скрыто*/
+#burger-label{
+	display: none;
+}
+
+#burger-toggle{
+	display: none;
+}
+
+/*----------------------*/
 
 @media (max-width: 1100px){
 
@@ -184,28 +230,127 @@ header {
 @media (max-width: 650px){
 
 	.header-address {
-
+		display: none;
+	/*
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;	
 
 	font-style: normal;
-
-	}
-
-	.nav-menu{
-		display: none;
+	*/
 	}
 
 	.icon-image{
 		height: 50px;
-		margin: 5px;
+		margin-left: 5px;
 	}
 
 	body{
 		font-size: 0.75rem;
 	}
 
+	/*=========Меню Бургера========*/
+
+	.nav-menu .menu-element{
+		display: none;
+	}
+
+	.nav-menu{
+		justify-content: end;
+
+		margin-right: 5px;
+	}
+
+	#burger-label{
+		display: block;
+		position: relative;
+
+		height: 25px; 
+		width: 30px;
+
+	}
+
+	#burger-label::after, label::before, label span {
+
+		position: absolute;
+
+		width: 100%;
+		height: 4px;
+		background-color: black;
+
+		transition: .3s;
+	} 
+
+	#burger-label::after {
+		content: "";
+		top: 1px;
+	}
+
+	#burger-label::before {
+		content: "";
+		bottom: 0;
+	}
+
+	#burger-label span {
+		top: 11px;
+	}
+
+
+	#burger-toggle:checked ~ label::after{
+		transform: rotate(45deg);
+		top: 11px;
+
+		background-color: #8a001e;
+	}
+
+	#burger-toggle:checked ~ label::before{
+		transform: rotate(-45deg);
+		bottom: 10px;
+
+		background-color: #8a001e;
+	}
+
+	#burger-toggle:checked ~ label span{
+		transform: rotate(-45deg);
+		top: 11px;
+
+		background-color: #8a001e;
+	}
+
+	
+
+
+	.nav-menu ul{
+		display: flex;
+		position: fixed;
+		left: 0;
+		right: 0;
+
+		margin: 0px;
+
+		opacity: 0;
+
+		flex-direction: column;
+		text-align: center;
+
+		top: -100vh;
+		bottom: 100vh;
+	}
+
+	#burger-toggle:checked ~ ul{
+		top: 100px;
+		bottom: 100px;
+		background-color: #357ea2;
+		opacity: 1;
+	}
+
+	.nav-menu ul li {
+		font-size: 2em;
+		margin: 0px;
+		justify-content: center;
+	}
+
+	
 }
 
 /*================ End Header Block ==============*/
