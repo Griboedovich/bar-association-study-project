@@ -41,15 +41,24 @@ main {
 
 /*================ End Struct Logic Block ===========*/
 
+* {
+	box-sizing: border-box;
+}
 
+/*================================================*/
 /*================ Body Block ====================*/
+/*================================================*/
 
 body {
 	margin: 0; 
 	background-color: #e5e5e5;
 }
 
-/*================ End Body Block ==============*/
+/*================================================*/
+/*================ End Body Block ================*/
+/*================================================*/
+
+
 
 /*================================================*/
 /*================ Header Block ==================*/
@@ -175,37 +184,32 @@ header {
 	align-items: center;
 
 }
-/*Тут реализован стандартный шаблон, его нужно переделать*/
+
 .mobile-nav-menu ul{
-	list-style: none;
+	display:none;
+
 	padding: 0px;
 	margin: 0px;
-	display: flex;
-	justify-content: space-between;
 
+	list-style: none;
 	width: 100%;
 
-	margin-left: 20px;
-	margin-right: 20px;
+	/*margin-left: 20px;
+	margin-right: 20px;*/
 
 	/*gap:*/
 
-	/*Закоментировать*/
-	display: none;
-
-	transition: 0.5s;
+	transition: 1s;
 
 }
 
 .mobile-nav-menu ul li{
+	display:flex;
 
+	align-items: center;
 	text-align: center;
 
 	margin: 10px;
-
-	display:flex;
-	align-items: center;
-
 }
 
 /*Бургер меню по дефолту*/
@@ -236,18 +240,22 @@ header {
 		border-style: none;
 
 		background: #357ea2;
-	}
-
-	.header-info {
-		margin: 0px;
-		padding: 10px 10px 20px 10px;
 
  		border-style: solid;
 		border-radius: 20px;
 		border-color: black;
 		border-width: 2px;
 
-		background: linear-gradient( to bottom, white, #387ea2)
+	}
+
+	.header-info {
+		margin: 0px;
+		padding: 10px 10px 20px 10px;
+
+		
+		background: linear-gradient( to bottom, white, #387ea2);
+
+		border-radius: 18px;
 	}
 
 	.header-address {
@@ -332,17 +340,17 @@ header {
 	}
 
 	#burger-toggle:checked ~ .header-info {
-		border-radius: 20px 20px 0px 0px;
+		/*border-radius: 18px 18px 0px 0px;*/
 		border-width: 2px 2px 0px 2px;
 	}
 
+	#burger-toggle:checked ~ .header-info {
+		border-radius: 18px 18px 0px 0px;
+
+		transition: border-bottom-left-radius 0.5s, border-bottom-right-radius 0.5s;
+	}
+
 	#burger-toggle:checked ~ .mobile-nav-menu {
-		border-style: solid;
-		border-color: black;
-		border-width: 0px 2px 2px 2px;
-		border-radius: 0px 0px 20px 20px;
-
-
 		display: flex;
 	}
 
@@ -350,18 +358,24 @@ header {
 
 		opacity: 1;
 		display: flex;
+
+		height: 50vh;
+
+		visibility: visible;
 	}
 
 	.mobile-nav-menu ul{
 		display: flex;
-		margin: 0px;
 
 		opacity: 0;
-
+		overflow: hidden;
+		visibility: hidden;
+		
 		flex-direction: column;
 		text-align: center;
-		
-		display:none
+		justify-content: space-around;		
+
+		height: 0px;	
 	}
 
 	
@@ -375,7 +389,10 @@ header {
 	
 }
 
+/*================================================*/
 /*================ End Header Block ==============*/
+/*================================================*/
+
 
 
 /*================ Main Block ====================*/
