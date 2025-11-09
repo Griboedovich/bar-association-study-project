@@ -51,7 +51,9 @@ body {
 
 /*================ End Body Block ==============*/
 
+/*================================================*/
 /*================ Header Block ==================*/
+/*================================================*/
 
 header {
 	color: black;
@@ -173,8 +175,8 @@ header {
 	align-items: center;
 
 }
-
-.nav-menu ul{
+/*Тут реализован стандартный шаблон, его нужно переделать*/
+.mobile-nav-menu ul{
 	list-style: none;
 	padding: 0px;
 	margin: 0px;
@@ -195,7 +197,7 @@ header {
 
 }
 
-.nav-menu ul li{
+.mobile-nav-menu ul li{
 
 	text-align: center;
 
@@ -229,15 +231,27 @@ header {
 
 @media (max-width: 650px){
 
+	header {
+		padding: 0px;
+		border-style: none;
+
+		background: #357ea2;
+	}
+
+	.header-info {
+		margin: 0px;
+		padding: 10px 10px 20px 10px;
+
+ 		border-style: solid;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+
+		background: linear-gradient( to bottom, white, #387ea2)
+	}
+
 	.header-address {
 		display: none;
-	/*
-	display: flex;
-	justify-content: space-between;
-	flex-direction: column;	
-
-	font-style: normal;
-	*/
 	}
 
 	.icon-image{
@@ -296,55 +310,63 @@ header {
 	}
 
 
-	#burger-toggle:checked ~ label::after{
+	#burger-toggle:checked ~ .header-info .nav-menu label::after{
 		transform: rotate(45deg);
 		top: 11px;
 
 		background-color: #8a001e;
 	}
 
-	#burger-toggle:checked ~ label::before{
+	#burger-toggle:checked ~ .header-info .nav-menu label::before{
 		transform: rotate(-45deg);
 		bottom: 10px;
 
 		background-color: #8a001e;
 	}
 
-	#burger-toggle:checked ~ label span{
+	#burger-toggle:checked ~ .header-info .nav-menu label span{
 		transform: rotate(-45deg);
 		top: 11px;
 
 		background-color: #8a001e;
 	}
 
-	
+	#burger-toggle:checked ~ .header-info {
+		border-radius: 20px 20px 0px 0px;
+		border-width: 2px 2px 0px 2px;
+	}
+
+	#burger-toggle:checked ~ .mobile-nav-menu {
+		border-style: solid;
+		border-color: black;
+		border-width: 0px 2px 2px 2px;
+		border-radius: 0px 0px 20px 20px;
 
 
-	.nav-menu ul{
 		display: flex;
-		position: fixed;
-		left: 0;
-		right: 0;
+	}
 
+	#burger-toggle:checked ~ .mobile-nav-menu ul{
+
+		opacity: 1;
+		display: flex;
+	}
+
+	.mobile-nav-menu ul{
+		display: flex;
 		margin: 0px;
 
 		opacity: 0;
 
 		flex-direction: column;
 		text-align: center;
-
-		top: -100vh;
-		bottom: 100vh;
+		
+		display:none
 	}
 
-	#burger-toggle:checked ~ ul{
-		top: 100px;
-		bottom: 100px;
-		background-color: #357ea2;
-		opacity: 1;
-	}
+	
 
-	.nav-menu ul li {
+	.mobile-nav-menu ul li {
 		font-size: 2em;
 		margin: 0px;
 		justify-content: center;
