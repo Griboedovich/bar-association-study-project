@@ -598,7 +598,7 @@ main section{
 	background-color: #08222e;
 }
 
-.id-card:hover .info-part-card .active-info-part-card {
+.image-part:hover ~ .info-part-card .active-info-part-card,  .active-info-part-card:hover{
 
 	clip-path: inset(0% 0% 0% 0%);
 
