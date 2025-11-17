@@ -613,7 +613,21 @@ main section{
 	clip-path: inset(0% 0% 0% 0%);
 
 }
+/* Очень странный glass-morfizm
+.id-card:hover::before{
+	content: " ";	
 
+	position: fixed;
+	
+	top: 0;
+	bottom: 0;
+	left:0;
+	right:0;
+
+	background: rgba( 0,0,0, 0.7);
+	backdrop-filter: blur(10px);
+}
+*/
 .achievement {
 	position: relative;
 
