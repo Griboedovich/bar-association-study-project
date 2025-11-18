@@ -59,7 +59,7 @@ main {
 
 	--main-color: #357ea2;
 	--accent-color: #89001c;
-
+	--center-object-width: 70%; 
 }
 
 
@@ -467,6 +467,8 @@ main section{
 	width:100%;
 }
 
+	/*===== Members Section =====*/
+
 .member-cards {
 	display:flex;
 	align-self: start;
@@ -479,7 +481,7 @@ main section{
 
 	margin: 20px;
 
-	width: 70%;
+	width: var(--center-object-width);
 
 	border-style: solid;
 	border-width: 4px;
@@ -635,7 +637,7 @@ main section{
 	margin: 10px;
 	margin-left: 20px;
 
-	align-self: start;
+	/*align-self: start;*/
 
 	cursor: auto;
 }
@@ -718,6 +720,205 @@ main section{
 
 .id-card.black-theme .achievement-info{
 	background-color: #3A000B;
+}
+
+	/*===== End Members Section =====*/
+
+.grid-price {
+	display: grid;
+	grid-auto-columns: 100%;
+	grid-auto-rows: auto;
+	row-gap: 20px;
+
+	/*width: var(--center-object-width);*/
+	width: 90%;
+
+	border-style: solid;
+	border-color: black;
+	border-width: 4px;
+	border-radius: 20px;
+}
+
+.grid-price-item{
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-color: gray;
+	border-width: 3px;
+}
+
+.end-grid{
+	border-bottom-style: none;
+}
+
+.grid-price .grid-title {
+	display: grid;
+	
+	grid-template-columns: 100%;
+	grid-template-rows: auto;
+
+	justify-items: center;
+
+	border-top-style: none;
+	border-bottom-style: solid;
+	border-color: black;
+	border-width: 4px;
+
+}
+
+
+
+/*.grid-legend * {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: blue;
+}*/
+
+.grid-price .grid-legend {
+	display: grid;
+	grid-template-columns: [service-start] 1fr [service-end note-start] 3fr [note-end cost-start] 1fr [cost-end];
+	grid-template-rows: auto;
+
+	justify-items: center;
+	align-items: center;
+	justify-content: center;
+
+	text-align: center;
+	font-weight: bold;
+
+	border-top-style: none;
+	border-bottom-style: none;
+
+}
+
+.grid-legend .service {
+	grid-column-start: service-start;
+	grid-column-end: service-end;
+	grid-row-start: 1;
+	grid-row-end: 1;
+}
+
+.grid-legend .note {
+	grid-column-start: note-start;
+	grid-column-end: note-end;
+	grid-row-start: 1;
+	grid-row-end: 1;
+
+}
+
+.grid-legend .cost {
+	grid-column-start: cost-start;
+	grid-column-end: cost-end;
+	grid-row-start: 1;
+	grid-row-end: 1;
+
+}
+
+.grid-price .grid-service-cost {
+	display: grid;
+	grid-template-columns: [service-start] 1fr [service-end] 3fr [cost-start] 1fr [cost-end];
+	grid-template-rows: auto;
+
+	justify-items: center;
+	align-items: center;
+	justify-content: center;
+
+	text-align: center;
+	font-weight: bold;
+
+}
+
+.grid-service-cost .service {
+	grid-column-start: service-start;
+	grid-column-end: service-end;
+	grid-row-start: 1;
+	grid-row-end: 1;
+}
+
+.grid-service-cost .cost {
+	grid-column-start: cost-start;
+	grid-column-end: cost-end;
+	grid-row-start: 1;
+	grid-row-end: 1;
+
+}
+
+.grid-price .grid-service-cost-note {
+	display: grid;
+	grid-template-columns: [service-start note-start] 1fr [service-end] 3fr [cost-start] 1fr [cost-end note-end];
+	grid-template-rows: auto auto auto;
+
+	justify-items: center;
+	align-items: center;
+	justify-content: center;
+
+	text-align: center;
+	font-weight: bold;
+
+}
+
+
+
+ .grid-service-cost-note.service {
+	grid-column-start: service-start;
+	grid-column-end: service-end;
+	grid-row-start: 1;
+	grid-row-end: 1;
+}
+
+ .grid-service-cost-note .cost {
+	grid-column-start: cost-start;
+	grid-column-end: cost-end;
+	grid-row-start: 1;
+	grid-row-end: 1;
+
+}
+
+.grid-service-cost-note .note {
+	display: grid;
+
+	grid-column-start: note-start;
+	grid-column-end: note-end;
+	grid-row-start: 2;
+	grid-row-end: 2;
+
+	align-content: center;
+
+	height: 100px;
+
+	overflow: hidden;
+
+	transition: 0.3s;
+}
+
+ .grid-service-cost-note .note-info {
+	display: grid;
+
+	grid-column-start: note-start;
+	grid-column-end: note-end;
+	grid-row-start: 3;
+	grid-row-end: 3;
+
+	align-items: center;
+
+	overflow: hidden;
+
+	height: 0px;
+
+
+	transition: 0.3s;
+}
+
+.grid-service-cost-note:hover .note-info{
+	height: 100px;
+}
+
+.grid-service-cost-note:hover .note{
+	height: 0px;
 }
 
 /*================ End Main Block ================*/
