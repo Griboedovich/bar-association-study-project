@@ -1,24 +1,8 @@
 /*================ Struct Logic Block ===============*/
-/* Данный блок прижимает header наверх, а footer вниз*/
-
-/*обвёртка должна занимать минимум 100% экрана для этого:
-  body должен занимать 100% размера родителя - html
-  html должен занимать 100% размера экрана*/
-   
 html,
 body {
 	height:  100%;
 }
-
-/*минимальная высота установлена потому что, в таком
-  случае контейнер будет расширятся при достижении
-  более чем размер экрана, иначе (если стоит просто)
-  height: 100% - обёртка будет иметь фиксированный
-  размер в 100% от икрана и не будет прокручиватся
-
-  wrapper - flex родитель, тогда main - flex ребёнок
-  flex-direction: column устанавливает элементы друг
-  под другом*/
 
 .wrapper {
 	min-height: 100%;
@@ -26,14 +10,6 @@ body {
 	display: flex;
 	flex-direction: column;
 }
-
-/*flex-grow задаёт вес эемента в занимаемом им объеме
-  если для всех элементов указан 0, а для одного - 1
-  то этот элемент расширится забирая всё свободное место
-  если несколько элементов имеют вес 1 - то они
-  распределятся равномерно, если же поменять заначение
-  до 2, то такой элемент расширится в 2 раза
-  в сравнении с элементами с весом 1*/
 
 main {
 	flex-grow: 1;
@@ -58,8 +34,12 @@ main {
 :root{
 
 	--main-color: #357ea2;
+	--second-color: #08222e;
 	--accent-color: #89001c;
+	--second-accent-color: #3A000B;
+
 	--center-object-width: 70%; 
+	--grid-price-width: 90%;
 }
 
 
@@ -615,21 +595,7 @@ main section{
 	clip-path: inset(0% 0% 0% 0%);
 
 }
-/* Очень странный glass-morfizm
-.id-card:hover::before{
-	content: " ";	
 
-	position: fixed;
-	
-	top: 0;
-	bottom: 0;
-	left:0;
-	right:0;
-
-	background: rgba( 0,0,0, 0.7);
-	backdrop-filter: blur(10px);
-}
-*/
 .achievement {
 	position: relative;
 
@@ -730,68 +696,71 @@ main section{
 	grid-auto-rows: auto;
 	row-gap: 20px;
 
-	/*width: var(--center-object-width);*/
-	width: 90%;
-
+	width: var(--grid-price-width);
+	/*
 	border-style: solid;
 	border-color: black;
 	border-width: 4px;
 	border-radius: 20px;
+	*/
 }
 
 .grid-price-item{
 
-	padding-top: 10px;
-	padding-bottom: 10px;
-
+	/*
 	border-top-style: solid;
 	border-bottom-style: solid;
 	border-color: gray;
 	border-width: 3px;
+	*/
+
+	row-gap: 5px;
+	column-gap: 5px;
+}
+
+.grid-simple-item {
+	display: block;
+	width: 100%;
+	height: 100%;
+
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+
+	align-content: center;
+
 }
 
 .end-grid{
-	border-bottom-style: none;
+	/*border-bottom-style: none;*/
 }
 
 .grid-price .grid-title {
 	display: grid;
 	
 	grid-template-columns: 100%;
-	grid-template-rows: auto;
+	grid-template-rows: auto auto;
 
 	justify-items: center;
 
-	border-top-style: none;
-	border-bottom-style: solid;
+	
+	border-style: solid;
 	border-color: black;
 	border-width: 4px;
+	border-radius: 20px 20px 0px 0px;
+	
 
 }
-
-
-
-/*.grid-legend * {
-	display: block;
-	width: 100%;
-	height: 100%;
-	background-color: blue;
-}*/
 
 .grid-price .grid-legend {
 	display: grid;
 	grid-template-columns: [service-start] 1fr [service-end note-start] 3fr [note-end cost-start] 1fr [cost-end];
 	grid-template-rows: auto;
 
-	justify-items: center;
 	align-items: center;
-	justify-content: center;
 
 	text-align: center;
 	font-weight: bold;
-
-	border-top-style: none;
-	border-bottom-style: none;
 
 }
 
@@ -828,97 +797,49 @@ main section{
 	justify-content: center;
 
 	text-align: center;
-	font-weight: bold;
 
 }
 
 .grid-service-cost .service {
 	grid-column-start: service-start;
 	grid-column-end: service-end;
-	grid-row-start: 1;
-	grid-row-end: 1;
+	/*grid-row-start: 1;
+	grid-row-end: 1;*/
 }
 
 .grid-service-cost .cost {
 	grid-column-start: cost-start;
 	grid-column-end: cost-end;
-	grid-row-start: 1;
-	grid-row-end: 1;
+	/*grid-row-start: 1;
+	grid-row-end: 1;*/
 
 }
 
-.grid-price .grid-service-cost-note {
-	display: grid;
+.grid-price .grid-with-note {
 	grid-template-columns: [service-start note-start] 1fr [service-end] 3fr [cost-start] 1fr [cost-end note-end];
-	grid-template-rows: auto auto auto;
-
-	justify-items: center;
-	align-items: center;
-	justify-content: center;
-
-	text-align: center;
-	font-weight: bold;
-
+	grid-template-rows: auto auto;
 }
 
-
-
- .grid-service-cost-note.service {
-	grid-column-start: service-start;
-	grid-column-end: service-end;
-	grid-row-start: 1;
-	grid-row-end: 1;
-}
-
- .grid-service-cost-note .cost {
-	grid-column-start: cost-start;
-	grid-column-end: cost-end;
+.grid-service-cost .note {
+	grid-column-start: 2;
+	grid-column-end: 3;
 	grid-row-start: 1;
 	grid-row-end: 1;
 
 }
 
-.grid-service-cost-note .note {
-	display: grid;
-
+ .grid-service-cost .note-info {
 	grid-column-start: note-start;
 	grid-column-end: note-end;
-	grid-row-start: 2;
-	grid-row-end: 2;
-
-	align-content: center;
-
-	height: 100px;
-
-	overflow: hidden;
-
-	transition: 0.3s;
-}
-
- .grid-service-cost-note .note-info {
-	display: grid;
-
-	grid-column-start: note-start;
-	grid-column-end: note-end;
-	grid-row-start: 3;
-	grid-row-end: 3;
-
-	align-items: center;
-
-	overflow: hidden;
-
-	height: 0px;
-
-
-	transition: 0.3s;
+	/*grid-row: end;*/
 }
 
 .grid-service-cost-note:hover .note-info{
-	height: 100px;
+
 }
 
 .grid-service-cost-note:hover .note{
-	height: 0px;
+
 }
 
 /*================ End Main Block ================*/
