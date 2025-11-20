@@ -290,127 +290,91 @@
 			<section class = "price-section">
 				<h2>Стоимость Услуг Адвокатской Коллегии Ангарда</h2>
 
-				<div class = "grid-price">
-					<div class = "grid-price-item grid-title">
+				<div class = "price-table">
 
-						<h3>Рекомендованная стоимость юридической помощи на 2026 год</h3>
-						<h4>(утв. Протоколом общего собрания членов МКА Ангарда № 1 от 17.11.2025 года)</h4>
+					<div class = "table-header">
+						<h2>Рекомендованная стоимость юридической помощи на 2026 год</h2>
+						<p>(утв. Протоколом общего собрания членов МКА Ангарда № 1 от 17.11.2025 года)</p>
+					</div>
+
+					<div class = "table-grid">
+						<div class = "service-row">
+							<div class = "grid-header service-name title">Услуга</div>
+							<div class = "grid-header price">Стоимость</div>
+							<div class = "grid-header note">Примечания</div>
+						</div>
+						<!-- Строка без примечания-->
+						<div class = "service-row">
+							<div class = "grid-item service-name">
+								Письменная консультация по гражданскому праву
+							</div>
+
+							<div class = "grid-item price">Договорная, но не менее </br> 20 000 рублей</div>
+							<div class = "grid-item note-trigger">
+								<span class = "note">Нет Примечаний</span>
+							</div>
+						</div>
+						<!-- =================== -->
+
+						<!-- Строка c примечанием -->
+
+						<div class = "service-row" onclick = "toggleRow(this)">
+
+							<div class = "grid-item service-name">
+								Устная консультация по гражданскому праву
+							</div>
+
+							<div class = "grid-item price">От 5 000 рублей за 1 час</div>
+							<div class = "grid-item note-trigger">
+								<span class = "note">Нажмите чтобы увидеть примечания</span>
+							</div>
+							<div class = "service-details">
+								Неполный час оплачивается, как полный час консультации
+							</div>
+
+						</div>
+						<!-- =================== -->
+
+						<!-- Строка c примечанием -->
+
+						<div class = "service-row" onclick = "toggleRow(this)">
+
+							<div class = "grid-item service-name">
+								Устная консультация по гражданскому праву
+							</div>
+
+							<div class = "grid-item price">От 5 000 рублей за 1 час</div>
+
+							<div class = "grid-item service-name">
+								Устная консультация по гражданскому праву
+							</div>
+
+							<div class = "grid-item price">От 5 000 рублей за 1 час</div>
+
+							<div class = "grid-item service-name">
+								Устная консультация по гражданскому праву
+							</div>
+
+							<div class = "grid-item price">От 5 000 рублей за 1 час</div>
+
+
+							<div class = "grid-item note-trigger">
+								<span class = "note">Нажмите чтобы увидеть примечания</span>
+							</div>
+							<div class = "service-details">
+								Неполный час оплачивается, как полный час консультации
+							</div>
+
+						</div>
+						<!-- =================== -->
+
+
 
 					</div>
 
-					<div class = "grid-price-item grid-legend">
-
-						<div class = "grid-simple-item service">
-							<span>Вид квалифицированной юридической помощи
-</span>
-						</div>
-
-						<div class = "grid-simple-item cost">
-							<span>Стоимость</span>
-						</div>
-
-						<div class = "grid-simple-item note">
-							<span>Примечание</span>
-						</div>
-
+					<div class = "footer">
+						<button class = "contact-button">Контакты</button>
 					</div>
-
-					<div class = "grid-price-item grid-service-cost grid-with-note end-grid">
-
-						<div class = "grid-simple-item service">
-							<span>Устная консультация по гражданскому праву</span>
-						</div>
-
-						<div class = "grid-simple-item cost">
-							<span>От 5 000 рублей за 1 час</span>
-						</div>
-
-						<div class = "grid-simple-item note">
-							<span>*имеются примечания, для большей информации наведите курсор*</span>
-						</div>
-
-						<div class = "grid-simple-item note-info">
-							<span>Неполный час оплачивается, как полный час консультации</span>
-						</div>
-
-					</div>
-
-					<div class = "grid-price-item grid-service-cost">
-
-						<div class = "grid-simple-item service">
-							<span>Письменная консультация по гражданскому праву</span>
-						</div>
-
-						<div class = "grid-simple-item cost">
-							<span>Договорная, но не менее 20 000 рублей</span>
-						</div>
-					</div>
-
-					<div class = "grid-price-item grid-service-cost grid-with-note end-grid">
-
-						<div class = "grid-simple-item service">
-							<span>Устная консультация по уголовному или административному праву</span>
-						</div>
-
-						<div class = "grid-simple-item cost">
-							<span>От 10 000 рублей за 1 час</span>
-						</div>
-
-						<div class = "grid-simple-item note">
-							<span>*имеются примечания, для большей информации наведите курсор*</span>
-						</div>
-
-						<div class = "grid-simple-item note-info">
-							<span>Неполный час оплачивается, как полный час консультации</span>
-						</div>
-
-					</div>
-
-					<div class = "grid-price-item grid-service-cost">
-
-						<div class = "grid-simple-item service">
-							<span>Письменная консультация по уголовному или административному (КАС или КоАП) праву</span>
-						</div>
-
-						<div class = "grid-simple-item cost">
-							<span>Договорная, но не менее 50 000 рублей.</span>
-						</div>
-					</div>
-					<div class = "grid-price-item grid-service-cost grid-with-note end-grid">
-
-						<div class = "grid-simple-item service">
-							<span>Сопровождение гражданского дела в суде общей юрисдикции общей инстанции «под ключ»</span>
-						</div>
-
-						<div class = "grid-simple-item cost">
-							<span>Договорная, но не менее 50 000 рублей</span>
-						</div>
-
-						<div class = "grid-simple-item service">
-							<span>Дальнейшее сопровождение гражданского дела в суде общей юрисдикции апелляционной или кассационной инстанций</span>
-						</div>
-
-						<div class = "grid-simple-item cost">
-							<span>Договорная, но не менее 50% от стоимости оказанной юридической помощи, оказанной при рассмотрении дела в суде первой инстанции</span>
-						</div>
-
-						<div class = "grid-simple-item service">
-							<span>Сопровождение гражданского дела в суде общей юрисдикции апелляционной или кассационной инстанций, если ранее дело вел другой судебный представитель (не адвокат МКА Ангарда)</span>
-						</div>
-
-						<div class = "grid-simple-item cost">
-							<span>Договорная, но не менее 100 000 рублей.</span>
-						</div>
-						<div class = "grid-simple-item note">
-							<span></span>
-						</div>
-
-						<div class = "grid-simple-item note-info">
-							<span>В случае досрочного прекращения соглашения с адвокатом до окончания рассмотрения дела по существу, фактически оказанная юридическая помощь тарифицируется за каждое отдельное процессуальное действие/документ по минимальной ставке.</span>
-						</div>
-
-					</div>
-
 
 				</div>
 
@@ -425,5 +389,8 @@
 		<footer>
 		</footer>
 		</div>
+
+		<script src = "src/scripts/script.js"></script>
+
 	</body>
 </html>
