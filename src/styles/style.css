@@ -38,6 +38,7 @@ main {
 	--accent-color: #89001c;
 	--second-accent-color: #3A000B;
 	--bright-accent-color: #FF001C;
+	--bright-accent-color--rgb: 255,0,28;
 
 	--center-object-width: 70%; 
 	--grid-price-width: 90%;
@@ -710,7 +711,7 @@ main section{
 }
 
 /* ===== ШАПКА ТАБЛИЦЫ ===== */
-.table-header {
+.table-grid-header {
 	background: linear-gradient(to bottom, white, var(--main-color));
 
 	color: black;
@@ -720,52 +721,89 @@ main section{
 	text-align: center;
 }
 
-.table-header h2 {
+.table-grid-header h2 {
 	font-size: 1.75em;
 
 	margin-bottom: 10px;
 
-	font-weight: 300;
-
 	font-weight: bold;
 
 }
 
-.table-header p {
+.table-grid-header p {
 	font-size: 1.1em;
-	opacity: 0.9;
 }
 
-/* ===== СЕТКА ТАБЛИЦЫ ===== */
 .table-grid {
 	display: grid;
 	grid-template-columns: 1fr;
-	gap: 0;
 }
 
-/* ===== ЗАГОЛОВКИ КОЛОНОК ===== */
-.grid-header {
-	background: #f8f9fa;
+.grid-header-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	padding: 20px;
 
 	font-weight: bold;
-
 	color: black;
 
 	border-bottom: 2px solid #e9ecef;
 
 	text-align: center;
 
-	display: flex;
-
-	align-items: center;
-
-	justify-content: center;
 }
 
-/* ===== ОБЩИЕ СТИЛИ ЯЧЕЕК ===== */
+.grid-header-row{
+	display: grid;
+
+	width: 100%;
+
+	grid-template-columns: 3fr 1fr;
+
+
+	background-color: var(--main-color)
+}
+
+.table-grid-row{
+
+	display: grid;
+
+	width: 100%;
+
+	grid-template-columns: 3fr 1fr;
+
+}
+
+.table-grid-row.note-true{
+	cursor: pointer;
+}
+
+.table-grid-row:hover {
+	background: #f8f9fa;
+}
+
+.table-grid-row.expanded {
+	background:  #f8f9fa;
+}
+
+.service-cost-grid {
+	display: grid;
+
+	width: 100%;
+
+	grid-template-columns: 2fr 1fr;
+
+	transition: background-color 0.3s ease;
+}
+
+
+
 .grid-item {
+	display: flex;
+	align-items: center;
+
 	padding: 20px;
 
 	border-style: solid;
@@ -773,9 +811,6 @@ main section{
 	border-width: 0px;
 	border-bottom-width: 1px;
 
-	display: flex;
-	align-items: center;
-	transition: all 0.3s ease;
 	min-height: 60px; 
 }
 
@@ -783,21 +818,23 @@ main section{
 	background: #f8f9fa;
 }
 
-/* ===== СТИЛИ ДЛЯ НАЗВАНИЙ УСЛУГ ===== */
 .service-name {
 	grid-column: 1;
 
 	color: black;
 	line-height: 1.5; 
-	flex: 1;
 }
 
 .service-name.title{
 	font-weight: bold;
 }
 
-/* ===== СТИЛИ ДЛЯ ЦЕН ===== */
 .price {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+
 	grid-column: 2;
 
 	font-weight: bold;
@@ -805,149 +842,110 @@ main section{
 	color: #27ae60;
 	text-align: center;
 	font-size: 1.1em;
-	flex: 1;
+	}
+
+.price.header {
+	color: black;
+}
+
+.note-status {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
 
-/* ===== ВАРИАНТ A: ВЫПАДАЮЩИЕ ПОДСКАЗКИ ===== */
-.note-trigger {
-	grid-column: 3;
-
-	position: relative; /* Для абсолютного позиционирования выпадающего контента */
 	color: gray;
 	text-align: center;
 
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	height: 100%;
 }
 
-/* ===== ВАРИАНТ B: РАСКРЫВАЮЩИЕСЯ СТРОКИ ===== */
-/* Контейнер для раскрывающейся строки */
-.service-row {
-	display: grid;
-
-	grid-template-columns: 2fr 1fr 1fr;
-	border-bottom: 1px solid #e9ecef;
-
-	border-style: solid;
-	border-color: #e9ecef;
-	border-width: 0px;
-	border-bottom-width: 1px;
-
-	cursor: pointer;
-	transition: background-color 0.3s ease;
+.note-status.true {
+	color: var(--accent-color)
 }
 
-.service-row:hover {
-	background: #f8f9fa;
-}
-
-/* Стили для раскрытой строки */
-.service-row.expanded {
-	background:  #f8f9fa;
-}
-
-/* Контейнер для дополнительных деталей */
-.service-details {
-	grid-column: 1 / -1; /* Занимает всю ширину */
+.note {
 	padding: 0;
-	max-height: 0; /* Скрываем контент */
+	max-height: 0;
+
 	overflow: hidden;
+
 	background: #fafafa;
-	transition: all 0.4s ease; /* Плавная анимация */
+	transition: all 0.4s ease; 
+
 	border-left: 4px solid transparent;
 
 	color: var(--accent-color);
 	font-weight: bold;
 }
 
-/* Раскрываем детали при активном состоянии */
-.service-row.expanded .service-details {
+.table-grid-row.expanded .note {
 	max-height: 200px; 
 	padding: 20px;
 	border-left-color: var(--accent-color);
 }
 
-/* Содержимое дополнительных деталей */
-.details-content {
-	color: #555;
-	line-height: 1.6;
-}
-
-/* Иконка раскрытия/скрытия */
-.expand-icon {
-	margin-left: 10px;
-	color: #3498db;
-	font-weight: bold;
-	transition: transform 0.3s ease;
-}
-
-/* Поворачиваем иконку при раскрытии */
-.service-row.expanded .expand-icon {
-	transform: rotate(180deg);
-}
-
-/* ===== ФУТЕР ТАБЛИЦЫ ===== */
-.footer {
+.table-grid-footer {
 	
 	background-image: linear-gradient(to bottom, var(--main-color,), var(--second-color));
 	padding: 25px;
 	text-align: center;
-	border-top: 2px solid #e9ecef;
 }
 
-.cta-button {
-	background: linear-gradient(135deg, #e74c3c, #c0392b);
+.contact-button {
+	background-color: var(--accent-color);
+
 	color: white;
+
 	border: none;
-	padding: 15px 40px;
 	font-size: 1.1em;
+
+	padding: 15px 40px;
+
 	border-radius: 50px;
+
 	cursor: pointer;
+
 	transition: all 0.3s ease;
-	box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+
+	box-shadow: 0 5px 15px rgba(var(--bright-accent-color--rgb), 0.4);
 }
 
-.cta-button:hover {
+.contact-button:hover {
 	transform: translateY(-2px);
-	box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
+
+	box-shadow: 0 8px 20px rgba(var(--bright-accent-color--rgb), 0.5);
 }
 
-/* ===== АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ===== */
 @media (max-width: 768px) {
-	.table-grid {
-		grid-template-columns: 1fr; /* Одна колонка на мобильных */
+	.grid-header-row {
+		display: none;
 	}
-	
-	.grid-header {
-		display: none; /* Скрываем заголовки на мобильных */
-	}
-	
-	.service-row {
+
+	.table-grid-row {
 		grid-template-columns: 1fr;
-		text-align: center;
+
+		border-style: solid;
+		border-color: black;
+		border-width: 0px;
+		border-bottom-width: 2px;
+	
+	}
+	
+	.service-cost-grid {
+		grid-template-columns: 1fr;
 	}
 	
 	.grid-item {
-		min-height: auto; /* Убираем фиксированную высоту на мобильных */
+		grid-column: 1;
+	
+		display: flex;
 		justify-content: center;
 		text-align: center;
+
+
+		min-height: auto;
 	}
 	
-	/* Адаптируем выпадающие подсказки для мобильных */
-	.note-content {
-		width: 250px;
-		left: 20px;
-		transform: translateY(-10px);
-	}
-	
-	.note-trigger:hover .note-content {
-		transform: translateY(-15px);
-	}
 }
 
 
