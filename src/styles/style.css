@@ -40,7 +40,9 @@ main {
 	--bright-accent-color: #FF001C;
 	--bright-accent-color--rgb: 255,0,28;
 
-	--center-object-width: 70%; 
+	--center-object-width: 70%;
+	--max-width: 1200px;
+ 
 	--grid-price-width: 90%;
 }
 
@@ -463,7 +465,9 @@ main section{
 
 	margin: 20px;
 
-	width: var(--center-object-width);
+	width: 100%;
+
+	max-width: var(--max-width);
 
 	border-style: solid;
 	border-width: 4px;
@@ -605,7 +609,7 @@ main section{
 	margin: 10px;
 	margin-left: 20px;
 
-	/*align-self: start;*/
+	align-self: start;
 
 	cursor: auto;
 }
@@ -710,7 +714,6 @@ main section{
 	border-radius: 20px;
 }
 
-/* ===== ШАПКА ТАБЛИЦЫ ===== */
 .table-grid-header {
 	background: linear-gradient(to bottom, white, var(--main-color));
 
@@ -840,7 +843,6 @@ main section{
 	font-weight: bold;
 
 	color: #27ae60;
-	text-align: center;
 	font-size: 1.1em;
 	}
 
@@ -948,7 +950,127 @@ main section{
 	
 }
 
+	/*================ contact card  ===============*/
+		
+.contact-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 30px;
+	width: 100%;
+	max-width: var(--max-width);
+}
 
+.contact-card {
+	background: white;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	transition: all 0.3s ease;
+
+	border-style: solid;
+	border-width: 4px;
+	border-color: black;
+	border-radius: 20px;
+
+}
+
+.contact-card:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.card-top {
+	background: linear-gradient(to bottom, white, var(--main-color));
+	padding: 40px 30px 30px 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card-icon {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 32px;
+	color: #2c5282;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+	padding: 30px;
+	text-align: center;
+}
+
+.card-content h3 {
+	color: black;
+	font-size: 1.25em;
+	margin-bottom: 15px;
+	font-weight: bold;
+}
+
+.card-content p {
+	color: #4a5568;
+	font-size: 1em;
+	line-height: 1.5;
+	margin-bottom: 8px;
+}
+
+.card-content a {
+	color: var(--accent-color);
+	text-decoration: none;
+	font-size: 1em;
+	display: block;
+}
+
+.card-content a:hover {
+	background-image: linear-gradient(to right, var(--accent-color), var(--accent-color), var(--bright-accent-color), var(--accent-color), var(--accent-color));
+	background-clip: text;
+	color: transparent;
+}
+
+.work-hours p {
+	margin-bottom: 5px;
+}
+
+@media (max-width: 650px) {
+	.contact-container {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(4, auto);
+		gap: 15px;
+
+	}
+	
+	.card-top {
+		padding: 25px 20px 20px 20px;
+	}
+	
+	.card-content {
+		padding: 20px;
+	}
+	
+	.card-icon {
+		width: 60px;
+		height: 60px;
+		font-size: 24px;
+	}
+
+	.card-content h3 {
+		font-size: 1.5em;
+	}
+	
+	.card-content p, .card-content a {
+		font-size: 1.1em;
+	}
+
+
+}
+
+	
+	
 /*================ End Main Block ================*/
 
 /*================ Footer Block ==================*/
@@ -960,6 +1082,8 @@ footer {
 	padding: 20px;
 
 	height: 200px;
+
+	margin-top: 100px;
 }
 
 /*================ End Footer Block ================*/
