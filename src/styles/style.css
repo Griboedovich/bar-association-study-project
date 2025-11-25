@@ -804,11 +804,11 @@ main section{
 	justify-content: center;
 	align-items: center;	
 
-	background-image: linear-gradient(to right, white, #357ea2)
+	background-image: linear-gradient(to right, white, var(--main-color))
 }
 
 .id-card.black-theme .image-part {
-	background-image: linear-gradient(to right,  #357ea2, #08222e)
+	background-image: linear-gradient(to right,  var(--main-color), var(--second-color))
 }
 
 .image-part .image-wrapper {
@@ -1013,6 +1013,25 @@ main section{
 
 .id-card.black-theme .achievement-info{
 	background-color: #3A000B;
+}
+
+@media (max-width: 900px) {
+
+	.id-card {
+	flex-direction: column;
+	}
+
+	.image-part {
+		background-image: linear-gradient(to bottom, white, var(--main-color))
+	}
+
+	.id-card.black-theme .image-part {
+		background-image: linear-gradient(to bottom,  var(--main-color), var(--second-color))
+	}
+
+	.active-info-part-card {
+		clip-path: inset(0% 0% 100% 0%)
+	}
 }
 
 	/*===== End Members Section =====*/
