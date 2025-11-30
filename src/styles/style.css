@@ -32,18 +32,151 @@ main {
 	/*======== End Image Wrapper ===========*/
 
 :root{
-
 	--main-color: #357ea2;
 	--second-color: #08222e;
+	--dim-color: #4a5568;
+	--second-dim-color: #f8f9fa;
+
+	--first-gradient-color: white;
+	--second-gradient-color: var(--main-color); 
+	--first-dark-gradient-color: var(--main-color);
+	--second-dark-gradient-color: var(--second-color);
+
 	--accent-color: #89001c;
+	--relict-accent-color: #89001c;
 	--second-accent-color: #3A000B;
 	--bright-accent-color: #FF001C;
-	--bright-accent-color--rgb: 255,0,28;
+
+	--first-text-color: black;
+	--accent-text-color: var(--accent-color);
+	--bright-text-color: white;
+	--cost-text-color: #27ae60;
+	--dim-text-color: var(--dim-color);
+	--first-heading-text-color: var(--second-color);
+	--second-heading-text-color: var(--main-color);
+
+	--background-color:  #e5e5e5;
+	--card-background-color: white;
+	--icons-background-color: white;
+
+	--main-border-color: black;
+	--second-border-color: var(--accent-color);
+	--third-border-color: var(--main-color);
+	--table-border-color: rgba(255, 255, 255, 0.1);
+	--accent-table-border-color: var(--main-color);
+	--second-table-border-color: #e9ecef;
+	--achievement-image-border-color: black;
+	--achievement-body-border-color: black;
+
+	--shadow-color: 0, 0, 0;
+	--accent-shadow-color:255,0,28;
+
+
+	--light-achievement-header: var(--relict-accent-color);
+	--light-achievement-body: var(--second-color);
+
+	--second-achievement-header: var(--accent-color);
+	--second-achievement-body: var(--second-accent-color);
+
+	--achievement-shadow: black 0px 7px 5px -3px;
+
+	--card-top-color: var(--card-background-color);
+
+	--big-shadow:0 20px 40px rgba(var(--shadow-color), 0.3);
+	--small-shadow: 0 10px 25px rgba(var(--shadow-color), 0.3); 
+	--accent-shadow-passive: 0 5px 15px rgba(var(--accent-shadow-color), 0.4);
+	--accent-shadow-active: 0 8px 20px rgba(var(--accent-shadow-color), 0.5);
 
 	--center-object-width: 70%;
 	--max-width: 1200px;
  
 	--grid-price-width: 90%;
+
+}
+
+.dark-mode {
+	display: none;
+}
+
+.light-mode{
+	display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+
+	:root{
+
+		--light-main-color: #357ea2;
+		--main-color: #08222e;
+		--second-color: #031117;
+		--dim-color: #888;
+		--second-dim-color: #142d39;
+
+		--first-gradient-color: #1c2b33;
+		--second-gradient-color: var(--main-color); 
+		--first-dark-gradient-color: var(--main-color);
+		--second-dark-gradient-color: var(--second-color);
+
+		--accent-color: #FF6380;
+		--second-accent-color: #3A000B;
+		--bright-accent-color: #FF001C;
+
+		--first-text-color: white;
+		--accent-text-color: var(--accent-color);
+		--bright-text-color: white;
+		--cost-text-color: #27ae60;
+		--dim-text-color: var(--dim-color);
+		--first-heading-text-color: var(--light-main-color);
+		--second-heading-text-color: var(--light-main-color);
+
+		--background-color:  #29373e;
+		--card-background-color: #1c2b33;
+		--icons-background-color: white;
+
+		--main-border-color: black;
+		--second-border-color: var(--accent-color);
+		--third-border-color: var(--main-color);
+		--table-border-color: rgba(255, 255, 255, 0.1);
+		--accent-table-border-color: var(--light-main-color);
+		--second-table-border-color: var(--light-main-color);
+		--achievement-image-border-color: black;
+		--achievement-body-border-color: black;
+
+		--shadow-color: 0, 0, 0;
+		--accent-shadow-color:255,0,28;
+
+
+		--light-achievement-header: var(--light-main-color);
+		--light-achievement-body: var(--second-color);
+
+		--second-achievement-header: var(--accent-color);
+		--second-achievement-body: var(--main-color);
+
+		--achievement-shadow: black 0px 7px 5px -3px;
+
+
+		--card-top-color: var(--accent-color);
+
+
+		--big-shadow:0 20px 40px rgba(var(--shadow-color), 0.3);
+		--small-shadow: 0 10px 25px rgba(var(--shadow-color), 0.3); 
+		--accent-shadow-passive: 0 5px 15px rgba(var(--accent-shadow-color), 0.4);
+		--accent-shadow-active: 0 8px 20px rgba(var(--accent-shadow-color), 0.5);
+
+		--center-object-width: 70%;
+		--max-width: 1200px;
+	 
+		--grid-price-width: 90%;
+
+	}
+
+	.dark-mode {
+		display: block;
+	}
+
+	.light-mode{
+		display: none;
+	}
 }
 
 
@@ -58,8 +191,10 @@ main {
 /*================================================*/
 
 body {
+	color: var(--first-text-color);
+
 	margin: 0; 
-	background-color: #e5e5e5;
+	background-color: var(--background-color);
 }
 
 /*================================================*/
@@ -73,18 +208,20 @@ body {
 /*================================================*/
 
 header {
-	color: black;
+	color: var(--first-text-color);
 
 	margin: 10px;
 	padding: 10px;
-	background: linear-gradient( to bottom, white, var(--main-color));
+	background: linear-gradient( to bottom, var(--first-gradient-color), var(--second-gradient-color));
 	border-radius: 20px;
 
-	border: 4px solid black;
+	border: 4px solid var(--main-border-color);
 
 	font-family: "Verdana";
 
 	font-size: 1.25em;
+
+	box-shadow: var(--small-shadow)
 }
 
 .header-info {
@@ -118,6 +255,8 @@ header {
 	max-height: 100%;
 
 }
+
+
 
 .engarde{
 	
@@ -158,7 +297,7 @@ header {
 
 .header-address a:link {
 
-	color: black;
+	color: var(--first-text-color);
 
 }
 
@@ -178,7 +317,7 @@ header {
 }
 
 .menu-element a:link ,.menu-element a:visited {
-	color: black;
+	color: var(--first-text-color);
 
 	text-decoration: none;
 }
@@ -205,7 +344,7 @@ header {
 	bottom: -5px;
 	left: 0px;
 
-	background-image: linear-gradient(to right, #89001c, #FF001C, #89001c);
+	background-image: linear-gradient(to right, var(--relict-accent-color), var(--bright-accent-color), var(--relict-accent-color));
 	background-repeat: no-repeat;
 	background-position: 50%;
 	background-size: 0%;
@@ -219,10 +358,45 @@ header {
 }
 
 .nav-menu .menu-element a:hover {
-	background-image: linear-gradient(to right, #89001c, #FF001C, #89001c);
+	background-image: linear-gradient(to right, var(--relict-accent-color), var(--bright-accent-color), var(--relict-accent-color));
 	background-clip: text;
 	color: transparent;
 
+}
+
+.back-to-top {
+	position: fixed;
+	bottom: 0;
+
+	left:	50%;
+	transform:translate(-50%, 0%);
+
+	max-width: var(--max-width);
+	height: 50px;
+	width:100%;
+
+	font-size: 24px;
+	color: var(--accent-color);
+
+
+	background: linear-gradient(var(--second-color));
+	border: 3px solid var(--main-border-color);
+
+	cursor: pointer;
+	z-index: 1000;
+
+	text-align: center;
+
+	opacity: 0;
+	visibility: hidden;
+
+	transition: 0.2s;
+
+	text-decoration: none;
+}
+
+.back-to-top:hover {
+	background: linear-gradient(to right,var(--second-color),var(--main-color), var(--second-color));
 }
 
 .mobile-nav-menu ul{
@@ -241,6 +415,7 @@ header {
 
 	transition: 1s;
 
+	padding: 0 5%;
 }
 
 .mobile-nav-menu ul li{
@@ -250,6 +425,28 @@ header {
 	text-align: center;
 
 	margin: 10px;
+
+	height:100%;
+	border-bottom: 3px solid var(--first-text-color);	
+
+}
+
+.mobile-nav-menu ul li:last-child {
+	border-bottom: none;
+}
+
+.mobile-nav-menu ul li a{
+	display: flex;
+	height: 100%;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.mobile-nav-menu ul li a:hover {
+	background-image: linear-gradient(to right, var(--relict-accent-color), var(--bright-accent-color), var(--relict-accent-color));
+	background-clip: text;
+	color: transparent;
 }
 
 /*Бургер меню по дефолту*/
@@ -279,13 +476,14 @@ header {
 		padding: 0px;
 		border-style: none;
 
-		background: #357ea2;
+		background: var(--main-color);
 
  		border-style: solid;
 		border-radius: 20px;
-		border-color: black;
+		border-color: var(--main-border-color);
 		border-width: 2px;
 
+		overflow: hidden;
 	}
 
 	.header-info {
@@ -293,9 +491,7 @@ header {
 		padding: 10px 10px 20px 10px;
 
 		
-		background: linear-gradient( to bottom, white, #387ea2);
-
-		border-radius: 18px;
+		background: linear-gradient( to bottom, var(--first-gradient-color), var(--second-gradient-color));
 	}
 
 	.header-address {
@@ -338,7 +534,7 @@ header {
 
 		width: 100%;
 		height: 4px;
-		background-color: black;
+		background-color: var(--first-text-color);
 
 		transition: .3s;
 	} 
@@ -362,25 +558,24 @@ header {
 		transform: rotate(45deg);
 		top: 11px;
 
-		background-color: #8a001e;
+		background-color: var(--relict-accent-color);
 	}
 
 	#burger-toggle:checked ~ .header-info .nav-menu label::before{
 		transform: rotate(-45deg);
 		bottom: 10px;
 
-		background-color: #8a001e;
+		background-color: var(--relict-accent-color);
 	}
 
 	#burger-toggle:checked ~ .header-info .nav-menu label span{
 		transform: rotate(-45deg);
 		top: 11px;
 
-		background-color: #8a001e;
+		background-color: var(--relict-accent-color);
 	}
 
 	#burger-toggle:checked ~ .header-info {
-		/*border-radius: 18px 18px 0px 0px;*/
 		border-width: 2px 2px 0px 2px;
 	}
 
@@ -453,21 +648,21 @@ main section{
 
 	/*====== Colegge info ======*/
 
-/* Стили основной карточки */
 .college-card {
-	background: white;
-	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+	background: var(--card-background-color);
+	box-shadow: var(--big-shadow);
 	overflow: hidden;
 	max-width: var(--max-width);
 	margin: 0 auto;
 
 	border-style: solid;
 	border-width: 4px;
-	border-color: black;
+	border-color: var(--main-border-color);
 	border-radius: 20px;
+
+	color: var(--first-text-color);
 }
 
-/* Контейнер с CSS Grid */
 .college-grid {
 	display: grid;
 	grid-template-columns: 2fr 1fr;
@@ -475,7 +670,6 @@ main section{
 	min-height: 100%;
 }
 
-/* Левая колонка (Текст и кнопка) */
 .college-info {
 	display: flex;
 	flex-direction: column;
@@ -496,18 +690,18 @@ main section{
 	height: 125px;
 
 
-	background-image: linear-gradient(to bottom, white, var(--main-color));
+	background-image: linear-gradient(to bottom, var(--first-gradient-color), var(--second-gradient-color));
 
 }
 
 /* Заголовок */
 .college-info-header h2 {
-	color: var(--second-color);
+	color: var(--first-heading-text-color);
 	margin-bottom: 25px;
 	font-size: 2.2em;
 	text-align: center;
 
-	border-bottom: 2px solid var(--accent-color);
+	border-bottom: 2px solid var(--second-border-color);
 
 	padding-bottom: 10px;
 
@@ -531,7 +725,7 @@ main section{
 	font-size: 1.1em;
 	margin-bottom: 25px;
 	font-style: italic;
-	color: gray;
+	color: var(--dim-text-color);
 }
 
 .mission-section, .values-section {
@@ -539,7 +733,7 @@ main section{
 }
 
 .mission-section h3, .values-section h3 {
-	color: var(--second-color);
+	color: var(--first-heading-text-color);
 	margin: 25px 0 15px 0;
 	font-size: 1.4em;
 }
@@ -556,7 +750,7 @@ main section{
 
 .mission-list li:before {
 	content: "•";
-	color: var(--accent-color);
+	color: var(--accent-text-color);
 	font-weight: bold;
 	position: absolute;
 	left: 10px;
@@ -565,7 +759,7 @@ main section{
 .values-list li:before {
 	/*content: "★";*/
 	content: "•";
-	color: var(--accent-color);
+	color: var(--accent-text-color);
 	position: absolute;
 	left: 10px;
 }
@@ -574,7 +768,7 @@ main section{
 	font-weight: bold;
 	margin-top: 25px;
 	font-size: 1.1em;
-	color: var(--accent-color);
+	color: var(--accent-text-color);
 }
 
 .signature {
@@ -583,62 +777,60 @@ main section{
 
 	font-style: italic;
 	text-align: right;
-	color: gray;
+	color: var(--dim-text-color);
 }
 
 .college-info-footer {
 	margin-top: 20px;
 
-	background: linear-gradient(to bottom, white, var(--main-color));
+	background: linear-gradient(to bottom, var(--first-gradient-color), var(--second-gradient-color));
 
 	height: 10%;
 }
 
-/* Стили для кнопки скачивания */
 .download-button {
 	display: block;
 	background: var(--accent-color);
-	color: white;
+	color: var(--bright-text-color);
 
 	padding: 14px 30px;
 	margin: 50px;
 	margin-top: 25px;
 
 	text-decoration: none;
-	border-radius: 6px;
+	border-radius: 20px;
 	font-weight: bold;
 	text-align: center;
 	transition: all 0.3s ease;
 	border: none;
 	cursor: pointer;
 	font-size: 1em;
-	box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+	box-shadow: var(--accent-shadow-passive);
 }
 
 .download-button:hover {
 	transform: translateY(-2px);
 
 	background: var(--accent-color);
-	box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+	box-shadow: var(--accent-shadow-active);
 }
 
-/* Правая колонка (Таблица реквизитов) */
 .college-details {
-	background-color: var(--second-color);
-	color: white;
+	background-color: var(--second-dark-gradient-color);
+	color: var(--bright-text-color);
 	display: flex;
 	flex-direction: column;
 }
 
 .college-details .college-info-header h2 {
-	color: white;
+	color: var(--bright-text-color);
 	margin-bottom: 25px;
 	font-size: 1.6em;
 	padding-bottom: 10px;
 }
 
 .college-details .college-info-header {
-	background-image: linear-gradient(to bottom, var(--main-color), var(--second-color));
+	background-image: linear-gradient(to bottom, var(--first-dark-gradient-color), var(--second-dark-gradient-color));
 	padding-left: 35px;
 	padding-right: 35px;
 
@@ -655,12 +847,12 @@ main section{
 
 .details-table td {
 	padding: 14px 14px 14px 0px;
-	border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+	border-bottom: 2px solid var(--table-border-color);
 	vertical-align: top;
 }
 
 .details-table .account{
-	border-bottom: 2px solid var(--main-color);
+	border-bottom: 2px solid var(--accent-table-border-color);
 }
 
 .details-table tr:last-child td {
@@ -669,17 +861,17 @@ main section{
 
 .detail-label {
 	font-weight: bold;
-	color: #bdc3c7;
+	color: var(--bright-text-color);
 	width: 40%;
 	padding-right: 15px;
 }
 
 .detail-label.bold {
-	color: var(--main-color)
+	color: var(--second-heading-text-color)
 }
 
 .detail-value {
-	color: #ecf0f1;
+	color: var(--bright-text-color);
 }
 
 /* Адаптивность для планшетов и мобильных устройств */
@@ -755,7 +947,7 @@ main section{
 	}
 
 	.details-table .account.hidden {
-		border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+		border-bottom: 2px solid var(--table-border-color);
 	}
 	
 	.detail-label:first-child {
@@ -792,11 +984,12 @@ main section{
 
 	border-style: solid;
 	border-width: 4px;
-	border-color: black;
+	border-color: var(--main-border-color);
 	border-radius: 20px;
 
 	overflow: hidden;
 
+	box-shadow: var(--small-shadow)
 }
 
 .image-part {
@@ -804,11 +997,11 @@ main section{
 	justify-content: center;
 	align-items: center;	
 
-	background-image: linear-gradient(to right, white, var(--main-color))
+	background-image: linear-gradient(to right, var(--first-gradient-color), var(--second-gradient-color))
 }
 
 .id-card.black-theme .image-part {
-	background-image: linear-gradient(to right,  var(--main-color), var(--second-color))
+	background-image: linear-gradient(to right,  var(--first-dark-gradient-color), var(--second-dark-gradient-color))
 }
 
 .image-part .image-wrapper {
@@ -823,7 +1016,7 @@ main section{
 
 	border-radius: 10px;
 
-	background-color: white;
+	background-color: var(--icons-background-color);
 
 	overflow: hidden;
 }
@@ -843,7 +1036,7 @@ main section{
 
 	position: relative;
 
-	background-color: white;
+	background-color: var(--card-background-color);
 
 	width: 100%;
 }
@@ -858,7 +1051,7 @@ main section{
 
 	width: 100%;
 
-	color: black;
+	color: var(--first-text-color);
 
 	font-size: 1.25em;
 }
@@ -900,10 +1093,10 @@ main section{
 
 	width: 100%;
 
-	color: white;
+	color: var(--bright-text-color);
 	font-size: 1.25em;
 
-	background-color: #357ea2;
+	background-color: var(--second-gradient-color);
 
 	overflow: auto;
 
@@ -914,7 +1107,7 @@ main section{
 }
 
 .id-card.black-theme .active-info-part-card {
-	background-color: #08222e;
+	background-color: var(--second-dark-gradient-color);
 }
 
 .image-part:hover ~ .info-part-card .active-info-part-card,  .active-info-part-card:hover{
@@ -938,7 +1131,7 @@ main section{
 .achievement .image-wrapper {
 	position: absolute;
 
-	background-color: white;
+	background-color: var(--icons-background-color);
 
 	height: 75px;
 	width: 75px;
@@ -949,7 +1142,7 @@ main section{
 	z-index: 2;
 
 	border-style: solid;
-	border-color: black;
+	border-color: var(--achievement-image-border-color);
 	border-width: 3px;
 	border-radius: 10px;
 
@@ -960,7 +1153,7 @@ main section{
 	flex-direction: column;
 
 	border-style: solid;
-	border-color: black;
+	border-color: var(--achievement-body-border-color);
 	border-width: 3px;
 	border-radius: 10px;
 
@@ -978,12 +1171,12 @@ main section{
 
 	padding-left: 95px;
 
-	background-color: #89001c;
+	background-color: var(--light-achievement-header);
 
 	min-height: 50px;
 	width: 100%;
 
-	box-shadow: 0px 7px 5px -3px black;
+	box-shadow: var(--achievement-shadow);
 
 	z-index: 1;
 
@@ -998,7 +1191,7 @@ main section{
 	padding: 10px;
 	padding-left: 20px;
 
-	background-color: #08222e;
+	background-color: var(--light-achievement-body);
 
 	min-height: 50px;
 	width: 100%;
@@ -1007,12 +1200,12 @@ main section{
 	text-align: justify;
 	font-family: "Arial";
 
-	color: #e4e4e4;
+	color: var(--bright-text-color);
 
 }
 
 .id-card.black-theme .achievement-info{
-	background-color: #3A000B;
+	background-color: var(--second-achievement-body);
 }
 
 @media (max-width: 900px) {
@@ -1022,11 +1215,11 @@ main section{
 	}
 
 	.image-part {
-		background-image: linear-gradient(to bottom, white, var(--main-color))
+		background-image: linear-gradient(to bottom,  var(--first-gradient-color), var(--second-gradient-color))
 	}
 
 	.id-card.black-theme .image-part {
-		background-image: linear-gradient(to bottom,  var(--main-color), var(--second-color))
+		background-image: linear-gradient(to bottom,  var(--first-dark-gradient-color), var(--second-dark-gradient-color))
 	}
 
 	.active-info-part-card {
@@ -1037,10 +1230,10 @@ main section{
 	/*===== End Members Section =====*/
 
 .price-table {
-	background: white;
+	background: var(--card-background-color);
 
 	border-radius: 20px;
-	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+	box-shadow: var(--big-shadow);
 
 	overflow: hidden;
 
@@ -1050,14 +1243,14 @@ main section{
 
 	border-style: solid;
 	border-width: 4px;
-	border-color: black;
+	border-color: var(--main-border-color);
 	border-radius: 20px;
 }
 
 .table-grid-header {
-	background: linear-gradient(to bottom, white, var(--main-color));
+	background: linear-gradient(to bottom, var(--first-gradient-color), var(--second-gradient-color));
 
-	color: black;
+	color: var(--first-text-color);
 
 	padding: 30px;
 
@@ -1090,9 +1283,9 @@ main section{
 	padding: 20px;
 
 	font-weight: bold;
-	color: black;
+	color: var(--first-text-color);
 
-	border-bottom: 2px solid #e9ecef;
+	border-bottom: 2px solid var(--third-border-color);
 
 	text-align: center;
 
@@ -1106,7 +1299,7 @@ main section{
 	grid-template-columns: 3fr 1fr;
 
 
-	background-color: var(--main-color)
+	background-color: var(--second-gradient-color)
 }
 
 .table-grid-row{
@@ -1124,11 +1317,11 @@ main section{
 }
 
 .table-grid-row:hover {
-	background: #f8f9fa;
+	background: var(--second-dim-color);
 }
 
 .table-grid-row.expanded {
-	background:  #f8f9fa;
+	background: var(--second-dim-color);
 }
 
 .service-cost-grid {
@@ -1150,21 +1343,17 @@ main section{
 	padding: 20px;
 
 	border-style: solid;
-	border-color: #e9ecef;
+	border-color: var(--second-table-border-color);
 	border-width: 0px;
 	border-bottom-width: 1px;
 
 	min-height: 60px; 
 }
 
-.grid-item:hover {
-	background: #f8f9fa;
-}
-
 .service-name {
 	grid-column: 1;
 
-	color: black;
+	color: var(--first-text-color);
 	line-height: 1.5; 
 }
 
@@ -1182,12 +1371,12 @@ main section{
 
 	font-weight: bold;
 
-	color: #27ae60;
+	color: var(--cost-text-color);
 	font-size: 1.1em;
 	}
 
 .price.header {
-	color: black;
+	color: var(--first-text-color);
 }
 
 .note-status {
@@ -1195,14 +1384,14 @@ main section{
 	align-items: center;
 	justify-content: center;
 
-	color: gray;
+	color: var(--dim-text-color);
 	text-align: center;
 
 	height: 100%;
 }
 
 .note-status.true {
-	color: var(--accent-color)
+	color: var(--accent-text-color)
 }
 
 .note {
@@ -1211,24 +1400,24 @@ main section{
 
 	overflow: hidden;
 
-	background: #fafafa;
+	background: var(--second-dim-color);
 	transition: all 0.4s ease; 
 
 	border-left: 4px solid transparent;
 
-	color: var(--accent-color);
+	color: var(--accent-text-color);
 	font-weight: bold;
 }
 
 .table-grid-row.expanded .note {
 	max-height: 200px; 
 	padding: 20px;
-	border-left-color: var(--accent-color);
+	border-left-color: var(--second-border-color);
 }
 
 .table-grid-footer {
 	
-	background-image: linear-gradient(to bottom, var(--main-color,), var(--second-color));
+	background-image: linear-gradient(to bottom, var(--first-dark-gradient-color), var(--second-dark-gradient-color));
 	padding: 25px;
 	text-align: center;
 }
@@ -1236,7 +1425,7 @@ main section{
 .contact-button {
 	background-color: var(--accent-color);
 
-	color: white;
+	color: var(--bright-text-color);
 
 	border: none;
 	font-size: 1.1em;
@@ -1249,13 +1438,13 @@ main section{
 
 	transition: all 0.3s ease;
 
-	box-shadow: 0 5px 15px rgba(var(--bright-accent-color--rgb), 0.4);
+	box-shadow: var(--accent-shadow-passive);
 }
 
 .contact-button:hover {
 	transform: translateY(-2px);
 
-	box-shadow: 0 8px 20px rgba(var(--bright-accent-color--rgb), 0.5);
+	box-shadow: var(--accent-shadow-active);
 }
 
 @media (max-width: 768px) {
@@ -1267,7 +1456,7 @@ main section{
 		grid-template-columns: 1fr;
 
 		border-style: solid;
-		border-color: black;
+		border-color: var(--main-border-color);
 		border-width: 0px;
 		border-bottom-width: 2px;
 	
@@ -1302,42 +1491,41 @@ main section{
 }
 
 .contact-card {
-	background: white;
-	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+	background: var(--card-background-color);
+	box-shadow: var(--small-shadow);
 	overflow: hidden;
 	transition: all 0.3s ease;
 
 	border-style: solid;
 	border-width: 4px;
-	border-color: black;
+	border-color: var(--main-border-color);
 	border-radius: 20px;
 
 }
 
 .contact-card:hover {
 	transform: translateY(-8px);
-	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+	box-shadow: var(--big-shadow);
 }
 
 .card-top {
-	background: linear-gradient(to bottom, white, var(--main-color));
+	background: linear-gradient(to bottom, var(--first-gradient-color), var(--second-gradient-color));
 	padding: 40px 30px 30px 30px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	  border-bottom: 4px solid var(--card-top-color);
 }
 
 .card-icon {
 	width: 80px;
 	height: 80px;
 	border-radius: 50%;
-	background: white;
+	background: var(--icons-background-color);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-size: 32px;
-	color: #2c5282;
-	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .card-content {
@@ -1346,28 +1534,28 @@ main section{
 }
 
 .card-content h3 {
-	color: black;
+	color: var(--first-text-color);
 	font-size: 1.25em;
 	margin-bottom: 15px;
 	font-weight: bold;
 }
 
 .card-content p {
-	color: #4a5568;
+	color: var(--dim-text-color);
 	font-size: 1em;
 	line-height: 1.5;
 	margin-bottom: 8px;
 }
 
 .card-content a {
-	color: var(--accent-color);
+	color: var(--accent-text-color);
 	text-decoration: none;
 	font-size: 1em;
 	display: block;
 }
 
 .card-content a:hover {
-	background-image: linear-gradient(to right, var(--accent-color), var(--accent-color), var(--bright-accent-color), var(--accent-color), var(--accent-color));
+	background-image: linear-gradient(to right, var(--relict-accent-color), var(--relict-accent-color), var(--bright-accent-color), var(--relict-accent-color), var(--relict-accent-color));
 	background-clip: text;
 	color: transparent;
 }
@@ -1424,20 +1612,20 @@ main section{
 
 	border-style: solid;
 	border-width: 4px;
-	border-color: black;
+	border-color: var(--main-border-color);
 }
 
 .footer-gradient {
-	background: linear-gradient(to bottom, var(--main-color), var(--second-color));
+	background: linear-gradient(to bottom, var(--first-dark-gradient-color), var(--second-dark-gradient-color));
 	height: 80px;
 	width: 100%;
 
 }
 
 .footer-main {
-	background-color: var(--second-color);
-	color: white;
-	padding: 40px 20px 20px;
+	background-color: var(--second-dark-gradient-color);
+	color: var(--bright-text-color);
+	padding: 40px 20px 70px 20px;
 }
 
 .footer-container {
@@ -1449,16 +1637,16 @@ main section{
 }
 
 .footer-section h3 {
-	color: white;
+	color: var(--bright-text-color);
 	margin-bottom: 20px;
 	font-size: 1.2em;
-	border-bottom: 2px solid var(--accent-color);
+	border-bottom: 2px solid var(--second-border-color);
 	padding-bottom: 10px;
 }
 
 .footer-section p, 
 .footer-section a {
-	color: white;
+	color: var(--bright-text-color);
 	text-decoration: none;
 	margin-bottom: 10px;
 	display: block;
@@ -1466,7 +1654,7 @@ main section{
 }
 
 .footer-section a:hover {
-	color: var(--accent-color);
+	color: var(--accent-text-color);
 }
 
 .logo-container {
@@ -1511,7 +1699,7 @@ main section{
 }
 
 .contact-label {
-	color: var(--main-color);
+	color: var(--second-heading-text-color);
 	font-weight: bold;
 	margin-right: 10px;
 }
@@ -1526,7 +1714,7 @@ main section{
 }
 
 .contact-value a:hover {
-	color: var(--accent-color);
+	color: var(--accent-text-color);
 	text-decoration: underline;
 }
 
@@ -1534,7 +1722,7 @@ main section{
 	grid-column: 1 / -1;
 	margin-top: 30px;
 	padding-top: 20px;
-	border-top: 2px solid var(--accent-color);
+	border-top: 2px solid var(--second-border-color);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
