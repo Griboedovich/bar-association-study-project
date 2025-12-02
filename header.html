@@ -35,6 +35,9 @@
 					<input id = "burger-toggle" type= "checkbox">
 
 					<div class = "menu-element">
+						<a class = "toggle-scheme" >Сменить тему</a>
+					</div>
+					<div class = "menu-element">
 						<a href = "#1" >Сведения о коллегии</a>
 					</div>
 					<div class = "menu-element">
@@ -62,7 +65,7 @@
 					<li class = "menu-element"> <a href = "#2" >Контакты</a> </li>
 					<li class = "menu-element"> <a href = "#3" >Члены коллегии</a> </li>
 					<li class = "menu-element"> <a href = "#4" >Стоимость услуг</a> </li>
-					<li class = "menu-element"> <a href = "#5" >Устав коллегии</a> </li>
+					<li class = "menu-element toggle-scheme"> <a href = "#5" >Сменить тему</a> </li>
 				</ul>
 			</nav>
 
@@ -72,14 +75,14 @@
 				<p> <span>Наша почта: </span> <a href = "mailto:Krakenfield@yandex.ru" >KrakenField@yandex.ru</a> </p>
 			</address>
 
-			<a href = "#top" id = "back-to-top" class = "back-to-top" title = "Back to top"><span>▲ вернутся наверх ▲</span></a>
+			<a id = "back-to-top" class = "back-to-top"><span>▲ вернутся наверх ▲</span></a>
 
 		</header>
 
 		<main>
 
 			<section class = "information-section">
-				<h2>Сведения Об Адвокатской Коллегии Ангарда</h2>
+				<h2 class = "section-heading first" >Сведения Об Адвокатской Коллегии Ангарда</h2>
 
 				<div class="college-card">
 					<div class="college-grid">
@@ -236,7 +239,7 @@
 			</section>
 
 			<section class = "members-section">
-				<h2>Члены Адвокатской Коллегии Ангарда</h2>
+				<h2 class = "section-heading" >Члены Адвокатской Коллегии Ангарда</h2>
 
 				<section class = "member-cards">
 					<div class = "id-card">
@@ -254,7 +257,7 @@
 								<div class = "achievement">
 
 									<div class = "image-wrapper">
-										<img src = "src/images/demo/money.png"/>
+										<img src = "src/images/icons/money.png"/>
 									</div>
 
 									<div class = "achievement-border">
@@ -272,7 +275,7 @@
 								<div class = "achievement">
 
 									<div class = "image-wrapper">
-										<img src = "src/images/demo/money.png"/>
+										<img src = "src/images/icons/chairman.png"/>
 									</div>
 
 									<div class = "achievement-border">
@@ -290,7 +293,7 @@
 								<div class = "achievement">
 
 									<div class = "image-wrapper">
-										<img src = "src/images/demo/money.png"/>
+										<img src = "src/images/icons/mentor.png"/>
 									</div>
 
 									<div class = "achievement-border">
@@ -308,7 +311,7 @@
 								<div class = "achievement">
 
 									<div class = "image-wrapper">
-										<img src = "src/images/demo/lawyer.png"/>
+										<img src = "src/images/icons/saul.png"/>
 									</div>
 
 									<div class = "achievement-border">
@@ -326,7 +329,7 @@
 								<div class = "achievement">
 
 									<div class = "image-wrapper">
-										<img src = "src/images/demo/money.png"/>
+										<img src = "src/images/icons/british.png"/>
 									</div>
 
 									<div class = "achievement-border">
@@ -372,7 +375,7 @@
 								<div class = "achievement">
 
 									<div class = "image-wrapper">
-										<img src = "src/images/demo/money.png"/>
+										<img src = "src/images/icons/money.png"/>
 									</div>
 
 									<div class = "achievement-border">
@@ -390,7 +393,7 @@
 								<div class = "achievement">
 
 									<div class = "image-wrapper">
-										<img src = "src/images/demo/lawyer.png"/>
+										<img src = "src/images/icons/51.png"/>
 									</div>
 
 									<div class = "achievement-border">
@@ -408,7 +411,7 @@
 								<div class = "achievement">
 
 									<div class = "image-wrapper">
-										<img src = "src/images/demo/money.png"/>
+										<img src = "src/images/icons/german.png"/>
 									</div>
 
 									<div class = "achievement-border">
@@ -445,7 +448,7 @@
 			</section>
 
 			<section class = "price-section">
-				<h2>Стоимость Услуг Адвокатской Коллегии Ангарда</h2>
+				<h2 class = "section-heading" >Стоимость Услуг Адвокатской Коллегии Ангарда</h2>
 
 				<div class = "price-table">
 
@@ -839,59 +842,54 @@
 			</section>
 
 			<section class = "contacts-section">
-				<h2>Контакты</h2>
+				<h2 class = "section-heading" >Контакты</h2>
 
 				<div class="contact-container">
-						<!-- Телефон -->
-						<div class="contact-card">
-							<div class="card-top">
-								<div class="card-icon">📞</div>
-							</div>
-							<div class="card-content">
-								<h3>Телефон</h3>
-								<p><a href="tel:+79958800855">+7 995 880 08 55</a></p>
-							</div>
+					<div class="contact-card">
+						<div class="card-top">
+							<div class="card-icon">📞</div>
 						</div>
-						
-						<!-- Email -->
-						<div class="contact-card">
-							<div class="card-top">
-								<div class="card-icon">✉️</div>
-							</div>
-							<div class="card-content">
-								<h3>Электронная почта</h3>
-								<p><a href="mailto:mka_angarda@mail.ru">mka_angarda@mail.ru</a></p>
-							</div>
+						<div class="card-content">
+							<h3>Телефон</h3>
+							<p><a href="tel:+79958800855">+7 995 880 08 55</a></p>
 						</div>
-						
-						<!-- Время работы -->
-						<div class="contact-card">
-							<div class="card-top">
-								<div class="card-icon">🕒</div>
-							</div>
-							<div class="card-content work-hours">
-								<h3>Время работы</h3>
-								<p>с 9:00 до 19:00</p>
-							</div>
+					</div>
+					
+					<div class="contact-card">
+						<div class="card-top">
+							<div class="card-icon">✉️</div>
 						</div>
-						
-						<!-- Адрес -->
-						<div class="contact-card">
-							<div class="card-top">
-								<div class="card-icon">📍</div>
-							</div>
-							<div class="card-content">
-								<h3>Почтовый адрес</h3>
-								<p>115455, г. Москва</p>
-								<p>а/я 30 МКА Ангарда</p>
-							</div>
+						<div class="card-content">
+							<h3>Электронная почта</h3>
+							<p><a href="mailto:mka_angarda@mail.ru">mka_angarda@mail.ru</a></p>
+						</div>
+					</div>
+					
+					<div class="contact-card">
+						<div class="card-top">
+							<div class="card-icon">🕒</div>
+						</div>
+						<div class="card-content work-hours">
+							<h3>Время работы</h3>
+							<p>с 9:00 до 19:00</p>
+						</div>
+					</div>
+					
+					<div class="contact-card">
+						<div class="card-top">
+							<div class="card-icon">📍</div>
+						</div>
+						<div class="card-content">
+							<h3>Почтовый адрес</h3>
+							<p>115455, г. Москва</p>
+							<p>а/я 30 МКА Ангарда</p>
 						</div>
 					</div>
 				</div>
 
 			</section>
-
 		</main>
+
 		<div class = "footer-wrapper">
 			<div class="footer-gradient"></div>
 			<footer class="footer-main">
@@ -966,9 +964,11 @@
 				</div>
 			</footer>
 		</div>
-		</div>
+	</div>
 
-		<script src = "src/scripts/script.js"></script>
-		<script src = "src/scripts/back_to_top.js"></script>
+	<script src = "src/scripts/script.js"></script>
+	<script src = "src/scripts/back_to_top.js"></script>
+	<script src = "src/scripts/toggleScheme.js"></script>
+
 	</body>
 </html>

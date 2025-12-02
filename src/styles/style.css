@@ -94,91 +94,91 @@ main {
 
 }
 
-.dark-mode {
+body:not(.dark-mode) .dark-mode {
 	display: none;
 }
 
-.light-mode{
+body:not(.dark-mode) .light-mode{
 	display: block;
 }
 
-@media (prefers-color-scheme: dark) {
+body.dark-mode {
 
-	:root{
+	--light-main-color: #357ea2;
+	--main-color: #08222e;
+	--second-color: #031117;
+	--dim-color: #888;
+	--second-dim-color: #142d39;
 
-		--light-main-color: #357ea2;
-		--main-color: #08222e;
-		--second-color: #031117;
-		--dim-color: #888;
-		--second-dim-color: #142d39;
+	--first-gradient-color: #1c2b33;
+	--second-gradient-color: var(--main-color); 
+	--first-dark-gradient-color: var(--main-color);
+	--second-dark-gradient-color: var(--second-color);
 
-		--first-gradient-color: #1c2b33;
-		--second-gradient-color: var(--main-color); 
-		--first-dark-gradient-color: var(--main-color);
-		--second-dark-gradient-color: var(--second-color);
+	--accent-color: #FF6380;
+	--second-accent-color: #3A000B;
+	--bright-accent-color: #FF001C;
 
-		--accent-color: #FF6380;
-		--second-accent-color: #3A000B;
-		--bright-accent-color: #FF001C;
+	--first-text-color: white;
+	--accent-text-color: var(--accent-color);
+	--bright-text-color: white;
+	--cost-text-color: #27ae60;
+	--dim-text-color: var(--dim-color);
+	--first-heading-text-color: var(--light-main-color);
+	--second-heading-text-color: var(--light-main-color);
 
-		--first-text-color: white;
-		--accent-text-color: var(--accent-color);
-		--bright-text-color: white;
-		--cost-text-color: #27ae60;
-		--dim-text-color: var(--dim-color);
-		--first-heading-text-color: var(--light-main-color);
-		--second-heading-text-color: var(--light-main-color);
+	--background-color:  #29373e;
+	--card-background-color: #1c2b33;
+	--icons-background-color: white;
 
-		--background-color:  #29373e;
-		--card-background-color: #1c2b33;
-		--icons-background-color: white;
+	--main-border-color: black;
+	--second-border-color: var(--accent-color);
+	--third-border-color: var(--main-color);
+	--table-border-color: rgba(255, 255, 255, 0.1);
+	--accent-table-border-color: var(--light-main-color);
+	--second-table-border-color: var(--light-main-color);
+	--achievement-image-border-color: black;
+	--achievement-body-border-color: black;
 
-		--main-border-color: black;
-		--second-border-color: var(--accent-color);
-		--third-border-color: var(--main-color);
-		--table-border-color: rgba(255, 255, 255, 0.1);
-		--accent-table-border-color: var(--light-main-color);
-		--second-table-border-color: var(--light-main-color);
-		--achievement-image-border-color: black;
-		--achievement-body-border-color: black;
-
-		--shadow-color: 0, 0, 0;
-		--accent-shadow-color:255,0,28;
+	--shadow-color: 0, 0, 0;
+	--accent-shadow-color:255,0,28;
 
 
-		--light-achievement-header: var(--light-main-color);
-		--light-achievement-body: var(--second-color);
+	--light-achievement-header: var(--light-main-color);
+	--light-achievement-body: var(--second-color);
 
-		--second-achievement-header: var(--accent-color);
-		--second-achievement-body: var(--main-color);
+	--second-achievement-header: var(--accent-color);
+	--second-achievement-body: var(--main-color);
 
-		--achievement-shadow: black 0px 7px 5px -3px;
-
-
-		--card-top-color: var(--accent-color);
+	--achievement-shadow: black 0px 7px 5px -3px;
 
 
-		--big-shadow:0 20px 40px rgba(var(--shadow-color), 0.3);
-		--small-shadow: 0 10px 25px rgba(var(--shadow-color), 0.3); 
-		--accent-shadow-passive: 0 5px 15px rgba(var(--accent-shadow-color), 0.4);
-		--accent-shadow-active: 0 8px 20px rgba(var(--accent-shadow-color), 0.5);
+	--card-top-color: var(--accent-color);
 
-		--center-object-width: 70%;
-		--max-width: 1200px;
-	 
-		--grid-price-width: 90%;
 
-	}
+	--big-shadow:0 20px 40px rgba(var(--shadow-color), 0.3);
+	--small-shadow: 0 10px 25px rgba(var(--shadow-color), 0.3); 
+	--accent-shadow-passive: 0 5px 15px rgba(var(--accent-shadow-color), 0.4);
+	--accent-shadow-active: 0 8px 20px rgba(var(--accent-shadow-color), 0.5);
 
-	.dark-mode {
-		display: block;
-	}
-
-	.light-mode{
-		display: none;
-	}
+	--center-object-width: 70%;
+	--max-width: 1200px;
+ 
+	--grid-price-width: 90%;
 }
 
+body.dark-mode  .dark-mode{
+	display: block;
+}
+
+body.dark-mode .light-mode{
+	display: none;
+}
+
+
+.toggle-scheme{
+	cursor: pointer;
+}
 
 /*================ End Struct Logic Block ===========*/
 
@@ -646,6 +646,29 @@ main section{
 	width:100%;
 }
 
+.section-heading{
+	text-align: center;
+
+	margin-top: 75px;
+
+	font-size: 2.2em;
+
+}
+
+.section-heading.first{
+	margin-top: 40px;
+}
+
+@media (max-width: 768px){
+
+
+	.section-heading{
+		font-size: 2em;
+		margin-top: 65px;
+	}
+
+}
+
 	/*====== Colegge info ======*/
 
 .college-card {
@@ -694,7 +717,6 @@ main section{
 
 }
 
-/* Заголовок */
 .college-info-header h2 {
 	color: var(--first-heading-text-color);
 	margin-bottom: 25px;
@@ -718,7 +740,6 @@ main section{
 	padding: 0px 50px 0px 50px;
 }
 
-/* Стили для текстового контента */
 .intro-text {
 	margin-top: 15px;
 
@@ -757,7 +778,6 @@ main section{
 }
 
 .values-list li:before {
-	/*content: "★";*/
 	content: "•";
 	color: var(--accent-text-color);
 	position: absolute;
@@ -836,7 +856,6 @@ main section{
 
 }
 
-/* Стили для таблицы */
 .details-table {
 	margin-bottom: 50px;
 	margin-left: 35px;
@@ -874,7 +893,23 @@ main section{
 	color: var(--bright-text-color);
 }
 
-/* Адаптивность для планшетов и мобильных устройств */
+@media (max-width: 1030px){
+
+	.college-info-header {
+
+		padding-left: 20px;
+		padding-right: 20px;
+
+	}
+
+	.college-details .college-info-header {
+		padding-left: 20px;
+		padding-right: 20px;
+
+	}
+
+}
+
 @media (max-width: 968px) {
 	.college-grid {
 		grid-template-columns: 1fr;
@@ -992,6 +1027,14 @@ main section{
 	box-shadow: var(--small-shadow)
 }
 
+.id-card:last-child{
+	margin-bottom: 0px;
+}
+
+.id-card h2 {
+	text-align: center;
+}
+
 .image-part {
 	display: flex;
 	justify-content: center;
@@ -1009,7 +1052,7 @@ main section{
 
 	position: relative;
 
-	height: 250px;
+	height: auto;
 	width: 250px;
 
 	margin: 40px;
@@ -1023,10 +1066,9 @@ main section{
 
 .image-part .image-wrapper img {
 	width: 100%;
-	/*max-height: 100%;*/
+
 	display: block;
 
-	position: absolute;
 	bottom: 0px;
 }
 
@@ -1126,6 +1168,9 @@ main section{
 	align-self: start;
 
 	cursor: auto;
+
+	max-width: 500px;
+	width: 100%;
 }
 
 .achievement .image-wrapper {
@@ -1159,7 +1204,6 @@ main section{
 
 	overflow: hidden;
 
-	width: 500px;
 	}
 
 .achievement-name{
@@ -1208,7 +1252,7 @@ main section{
 	background-color: var(--second-achievement-body);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 925px) {
 
 	.id-card {
 	flex-direction: column;
@@ -1225,6 +1269,25 @@ main section{
 	.active-info-part-card {
 		clip-path: inset(0% 0% 100% 0%)
 	}
+
+	.achievement {
+
+		align-self: center;
+		margin: 10px;
+	}
+
+
+
+}
+
+
+@media (max-width: 320px) {
+
+	.image-part .image-wrapper {
+		margin: 20px;
+	}
+
+
 }
 
 	/*===== End Members Section =====*/
