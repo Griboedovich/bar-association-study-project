@@ -1510,6 +1510,7 @@ main section{
 	transition: all 0.4s ease; 
 
 	border-left: 4px solid transparent;
+	border-top: 1px solid transparent;	
 
 	color: var(--accent-text-color);
 	font-weight: bold;
@@ -1520,6 +1521,8 @@ main section{
 	padding: 20px;
 	border-left-color: var(--second-border-color);
 }
+
+
 
 .table-grid-footer {
 	
@@ -1565,9 +1568,16 @@ main section{
 		border-color: var(--main-border-color);
 		border-width: 0px;
 		border-bottom-width: 2px;
-	
+	}
+
+	.note-status {
+		border-bottom-width: 0px;
 	}
 	
+	.table-grid-row.expanded .note {
+		border-top: solid var(--second-table-border-color) 1px;
+	}
+
 	.service-cost-grid {
 		grid-template-columns: 1fr;
 	}
