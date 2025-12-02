@@ -31,6 +31,8 @@ main {
 
 	/*======== End Image Wrapper ===========*/
 
+
+	/*======== Style Scheme ===========*/
 :root{
 	--main-color: #357ea2;
 	--second-color: #08222e;
@@ -180,6 +182,9 @@ body.dark-mode .light-mode{
 	cursor: pointer;
 }
 
+
+	/*======== End Style Scheme ===========*/
+
 /*================ End Struct Logic Block ===========*/
 
 * {
@@ -195,6 +200,12 @@ body {
 
 	margin: 0; 
 	background-color: var(--background-color);
+}
+
+@media (max-width: 650px){
+	body{
+		font-size: 0.75rem;
+	}
 }
 
 /*================================================*/
@@ -470,74 +481,7 @@ header {
 
 }
 
-@media (max-width: 650px){
 
-	header .icon-image{
-		height: 50px;
-		margin-left: 5px;
-	}
-
-	body{
-		font-size: 0.75rem;
-	}
-
-	#burger-label{
-		display: block;
-		position: relative;
-
-		height: 25px; 
-		width: 30px;
-
-	}
-
-	#burger-label::after, label::before, label span {
-
-		position: absolute;
-
-		width: 100%;
-		height: 4px;
-		background-color: var(--first-text-color);
-
-		transition: .3s;
-	} 
-
-	#burger-label::after {
-		content: "";
-		top: 1px;
-	}
-
-	#burger-label::before {
-		content: "";
-		bottom: 0;
-	}
-
-	#burger-label span {
-		top: 11px;
-	}
-
-
-	#burger-toggle:checked ~ .header-info .nav-menu label::after{
-		transform: rotate(45deg);
-		top: 11px;
-
-		background-color: var(--relict-accent-color);
-	}
-
-	#burger-toggle:checked ~ .header-info .nav-menu label::before{
-		transform: rotate(-45deg);
-		bottom: 10px;
-
-		background-color: var(--relict-accent-color);
-	}
-
-	#burger-toggle:checked ~ .header-info .nav-menu label span{
-		transform: rotate(-45deg);
-		top: 11px;
-
-		background-color: var(--relict-accent-color);
-	}
-
-}
 
 @media (max-width: 810px){
 
@@ -585,9 +529,10 @@ header {
 		display: block;
 		position: relative;
 
-		height: 25px; 
-		width: 30px;
+		height: 35px; 
+		width: 40px;
 
+		margin-right: 20px;
 	}
 
 	#burger-label::after, label::before, label span {
@@ -595,7 +540,7 @@ header {
 		position: absolute;
 
 		width: 100%;
-		height: 4px;
+		height: 5px;
 		background-color: var(--first-text-color);
 
 		transition: .3s;
@@ -603,48 +548,38 @@ header {
 
 	#burger-label::after {
 		content: "";
-		top: 1px;
+		top: 0px;
 	}
 
 	#burger-label::before {
 		content: "";
-		bottom: 0;
+		bottom: 0px;
 	}
 
 	#burger-label span {
-		top: 11px;
+		top: 15px;
 	}
 
 
 	#burger-toggle:checked ~ .header-info .nav-menu label::after{
 		transform: rotate(45deg);
-		top: 11px;
+		top: 15px;
 
 		background-color: var(--relict-accent-color);
 	}
 
 	#burger-toggle:checked ~ .header-info .nav-menu label::before{
 		transform: rotate(-45deg);
-		bottom: 10px;
+		bottom: 15px;
 
 		background-color: var(--relict-accent-color);
 	}
 
 	#burger-toggle:checked ~ .header-info .nav-menu label span{
 		transform: rotate(-45deg);
-		top: 11px;
+		top: 15px;
 
 		background-color: var(--relict-accent-color);
-	}
-
-	#burger-toggle:checked ~ .header-info {
-		border-width: 2px 2px 0px 2px;
-	}
-
-	#burger-toggle:checked ~ .header-info {
-		border-radius: 18px 18px 0px 0px;
-
-		transition: border-bottom-left-radius 0.5s, border-bottom-right-radius 0.5s;
 	}
 
 	#burger-toggle:checked ~ .mobile-nav-menu {
@@ -684,6 +619,53 @@ header {
 	}
 
 	
+}
+
+@media (max-width: 650px){
+
+	header .icon-image{
+		height: 50px;
+		margin-left: 5px;
+	}
+
+
+	#burger-label{
+		height: 25px; 
+		width: 30px;
+
+		margin-right: 0px;
+	}
+
+	#burger-label::after, label::before, label span {
+		width: 100%;
+		height: 4px;
+	} 
+
+	#burger-label::after {
+		top: 1px;
+	}
+
+	#burger-label::before {
+		bottom: 0;
+	}
+
+	#burger-label span {
+		top: 11px;
+	}
+
+
+	#burger-toggle:checked ~ .header-info .nav-menu label::after{
+		top: 11px;
+	}
+
+	#burger-toggle:checked ~ .header-info .nav-menu label::before{
+		bottom: 10px;
+	}
+
+	#burger-toggle:checked ~ .header-info .nav-menu label span{
+		top: 11px;
+	}
+
 }
 
 /*================================================*/
