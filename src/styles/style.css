@@ -333,7 +333,7 @@ header {
 .header-address a:link {
 
 	color: var(--first-text-color);
-
+	text-decoration: none;
 }
 
 .header-address p {
