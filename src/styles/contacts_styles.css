@@ -1,0 +1,118 @@
+	/*================ contact card  ===============*/
+		
+.contact-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 30px;
+	width: 100%;
+	max-width: var(--max-width);
+}
+
+.contact-card {
+	background: var(--card-background-color);
+	box-shadow: var(--small-shadow);
+	overflow: hidden;
+	transition: all 0.3s ease;
+
+	border-style: solid;
+	border-width: 4px;
+	border-color: var(--main-border-color);
+	border-radius: 20px;
+
+}
+
+.contact-card:hover {
+	transform: translateY(-8px);
+	box-shadow: var(--big-shadow);
+}
+
+.card-top {
+	background: linear-gradient(to bottom, var(--first-gradient-color), var(--second-gradient-color));
+	padding: 40px 30px 30px 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	  border-bottom: 4px solid var(--card-top-color);
+}
+
+.card-icon {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background: var(--icons-background-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 32px;
+}
+
+.card-content {
+	padding: 30px;
+	text-align: center;
+}
+
+.card-content h3 {
+	color: var(--first-text-color);
+	font-size: 1.25em;
+	margin-bottom: 15px;
+	font-weight: bold;
+}
+
+.card-content p {
+	color: var(--dim-text-color);
+	font-size: 1em;
+	line-height: 1.5;
+	margin-bottom: 8px;
+}
+
+.card-content a {
+	color: var(--accent-text-color);
+	text-decoration: none;
+	font-size: 1em;
+	display: block;
+}
+
+.card-content a:hover {
+	background-image: linear-gradient(to right, var(--relict-accent-color), var(--relict-accent-color), var(--bright-accent-color), var(--relict-accent-color), var(--relict-accent-color));
+	background-clip: text;
+	color: transparent;
+}
+
+.work-hours p {
+	margin-bottom: 5px;
+}
+
+@media (max-width: 650px) {
+	.contact-container {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(4, auto);
+		gap: 15px;
+
+	}
+	
+	.card-top {
+		padding: 25px 20px 20px 20px;
+	}
+	
+	.card-content {
+		padding: 20px;
+	}
+	
+	.card-icon {
+		width: 60px;
+		height: 60px;
+		font-size: 24px;
+	}
+
+	.card-content h3 {
+		font-size: 1.5em;
+	}
+	
+	.card-content p, .card-content a {
+		font-size: 1.1em;
+	}
+
+
+}
+

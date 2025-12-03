@@ -1,0 +1,292 @@
+	/*===== Members Section =====*/
+
+.member-cards {
+	display:flex;
+	align-self: start;
+
+}
+
+.id-card {
+	display: flex;
+	flex-direction: row;
+
+	margin: 20px;
+  text-decoration: none;
+	width: 100%;
+
+	max-width: var(--max-width);
+
+	border-style: solid;
+	border-width: 4px;
+	border-color: var(--main-border-color);
+	border-radius: 20px;
+
+	overflow: hidden;
+
+	box-shadow: var(--small-shadow)
+}
+
+.id-card:last-child{
+	margin-bottom: 0px;
+}
+
+.id-card h2 {
+	text-align: center;
+}
+
+.image-part {
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+
+	background-image: linear-gradient(to right, var(--first-gradient-color), var(--second-gradient-color))
+}
+
+.id-card.black-theme .image-part {
+	background-image: linear-gradient(to right,  var(--first-dark-gradient-color), var(--second-dark-gradient-color))
+}
+
+.image-part .image-wrapper {
+	display: inline-block;
+
+	position: relative;
+
+	height: auto;
+	width: 250px;
+
+	margin: 40px;
+
+	border-radius: 10px;
+
+	background-color: var(--icons-background-color);
+
+	overflow: hidden;
+}
+
+.image-part .image-wrapper img {
+	width: 100%;
+
+	display: block;
+
+	bottom: 0px;
+}
+
+.info-part-card {
+	display: flex;
+	align-items: stretch;
+
+	position: relative;
+
+	background-color: var(--card-background-color);
+
+	width: 100%;
+}
+
+.passive-info-part-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+
+	padding: 20px;
+
+	width: 100%;
+
+	color: var(--first-text-color);
+
+	font-size: 1.25em;
+}
+
+.name {
+	margin: 20px;
+}
+
+.characters{
+	padding-left: 20px;
+
+	align-self: start;
+}
+
+.specialization {
+	margin-bottom: 0px;
+
+	align-self: start;
+	font-weight: bold;
+}
+
+.specialization-info {
+	margin-top: 5px;
+
+	text-align: justify;
+}
+
+.active-info-part-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	position: absolute;
+
+	padding: 20px;
+
+	top: 0px;
+	bottom:0px;
+
+	width: 100%;
+
+	color: var(--ative-card-part-text-color);
+	font-size: 1.25em;
+
+	background-color: var(--second-gradient-color);
+
+	overflow: auto;
+
+	clip-path: inset(0% 100% 0% 0%);
+	transition: clip-path 0.5s ease;
+
+	cursor: ns-resize;
+}
+
+.id-card.black-theme .active-info-part-card {
+	background-color: var(--second-dark-gradient-color);
+}
+
+.image-part:hover ~ .info-part-card .active-info-part-card,  .active-info-part-card:hover{
+
+	clip-path: inset(0% 0% 0% 0%);
+
+}
+
+.achievement {
+	color: var(--bright-text-color);
+
+	position: relative;
+
+	padding-top: 12.5px;
+	margin: 10px;
+	margin-left: 20px;
+
+	align-self: start;
+
+	cursor: auto;
+
+	max-width: 500px;
+	width: 100%;
+}
+
+.achievement .image-wrapper {
+	position: absolute;
+
+	background-color: var(--icons-background-color);
+
+	height: 75px;
+	width: 75px;
+
+	top: 0px;
+	left: 20px;
+
+	z-index: 2;
+
+	border-style: solid;
+	border-color: var(--achievement-image-border-color);
+	border-width: 3px;
+	border-radius: 10px;
+
+}
+
+.achievement-border{
+	display: flex;
+	flex-direction: column;
+
+	border-style: solid;
+	border-color: var(--achievement-body-border-color);
+	border-width: 3px;
+	border-radius: 10px;
+
+	overflow: hidden;
+
+	}
+
+.achievement-name{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: relative;
+
+	padding-left: 95px;
+
+	background-color: var(--light-achievement-header);
+
+	min-height: 50px;
+	width: 100%;
+
+	box-shadow: var(--achievement-shadow);
+
+	z-index: 1;
+
+	font-weight: bold;
+}
+
+.achievement-info{
+	display: flex;
+	justify-content: start;
+	align-items: center;
+
+	padding: 10px;
+	padding-left: 20px;
+
+	background-color: var(--light-achievement-body);
+
+	min-height: 50px;
+	width: 100%;
+
+	font-size: 0.75em;
+	text-align: justify;
+	font-family: "Arial";
+
+
+}
+
+.id-card.black-theme .achievement-info{
+	background-color: var(--second-achievement-body);
+}
+
+@media (max-width: 925px) {
+
+	.id-card {
+	flex-direction: column;
+	}
+
+	.image-part {
+		background-image: linear-gradient(to bottom,  var(--first-gradient-color), var(--second-gradient-color))
+	}
+
+	.id-card.black-theme .image-part {
+		background-image: linear-gradient(to bottom,  var(--first-dark-gradient-color), var(--second-dark-gradient-color))
+	}
+
+	.active-info-part-card {
+		clip-path: inset(0% 0% 100% 0%)
+	}
+
+	.achievement {
+
+		align-self: center;
+		margin: 10px;
+	}
+
+
+
+}
+
+
+@media (max-width: 320px) {
+
+	.image-part .image-wrapper {
+		margin: 20px;
+	}
+
+}
+
+	/*===== End Members Section =====*/

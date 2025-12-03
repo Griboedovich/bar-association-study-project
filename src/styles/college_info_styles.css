@@ -1,0 +1,331 @@
+	/*====== Colegge info ======*/
+
+.college-card {
+	background: var(--card-background-color);
+	box-shadow: var(--big-shadow);
+	overflow: hidden;
+	max-width: var(--max-width);
+	margin: 0 auto;
+
+	border-style: solid;
+	border-width: 4px;
+	border-color: var(--main-border-color);
+	border-radius: 20px;
+
+	color: var(--first-text-color);
+}
+
+.college-grid {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 0;
+	min-height: 100%;
+}
+
+.college-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+}
+
+.college-info-header {
+	display: flex;
+	justify-content: center;
+	align-items: end;
+
+	padding-bottom: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+
+	width: 100%;
+	height: 125px;
+
+
+	background-image: linear-gradient(to bottom, var(--first-gradient-color), var(--second-gradient-color));
+
+}
+
+.college-info-header h2 {
+	color: var(--first-heading-text-color);
+	margin-bottom: 25px;
+	font-size: 2.2em;
+	text-align: center;
+
+	border-bottom: 2px solid var(--second-border-color);
+
+	padding-bottom: 10px;
+
+	width: 100%;
+}
+
+.college-info-block {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+
+	height: 100%;
+
+	padding: 0px 50px 0px 50px;
+}
+
+.intro-text {
+	margin-top: 15px;
+
+	font-size: 1.1em;
+	margin-bottom: 25px;
+	font-style: italic;
+	color: var(--dim-text-color);
+}
+
+.mission-section, .values-section {
+	margin-bottom: 30px;
+}
+
+.mission-section h3, .values-section h3 {
+	color: var(--first-heading-text-color);
+	margin: 25px 0 15px 0;
+	font-size: 1.4em;
+}
+
+.mission-list, .values-list {
+	list-style-type: none;
+}
+
+.mission-list li, .values-list li {
+	margin-bottom: 12px;
+	padding-left: 25px;
+	position: relative;
+}
+
+.mission-list li:before {
+	content: "•";
+	color: var(--accent-text-color);
+	font-weight: bold;
+	position: absolute;
+	left: 10px;
+}
+
+.values-list li:before {
+	content: "•";
+	color: var(--accent-text-color);
+	position: absolute;
+	left: 10px;
+}
+
+.outro-text {
+	font-weight: bold;
+	margin-top: 25px;
+	font-size: 1.1em;
+	color: var(--accent-text-color);
+}
+
+.signature {
+	margin-top: 30px;
+	margin-bottom: 0px;
+
+	font-style: italic;
+	text-align: right;
+	color: var(--dim-text-color);
+}
+
+.college-info-footer {
+	margin-top: 20px;
+
+	background: linear-gradient(to bottom, var(--first-gradient-color), var(--second-gradient-color));
+
+	height: 10%;
+}
+
+.download-button {
+	display: block;
+	background: var(--accent-color);
+	color: var(--accent-buttons-text-color);
+
+	padding: 14px 30px;
+	margin: 50px;
+	margin-top: 25px;
+
+	text-decoration: none;
+	border-radius: 20px;
+	font-weight: bold;
+	text-align: center;
+	transition: all 0.3s ease;
+	border: none;
+	cursor: pointer;
+	font-size: 1em;
+	box-shadow: var(--accent-shadow-passive);
+}
+
+.download-button:hover {
+	transform: translateY(-2px);
+
+	background: var(--accent-color);
+	box-shadow: var(--accent-shadow-active);
+}
+
+.college-details {
+	background-color: var(--second-dark-gradient-color);
+	color: var(--bright-text-color);
+	display: flex;
+	flex-direction: column;
+}
+
+.college-details .college-info-header h2 {
+	color: var(--bright-text-color);
+	margin-bottom: 25px;
+	font-size: 1.6em;
+	padding-bottom: 10px;
+}
+
+.college-details .college-info-header {
+	background-image: linear-gradient(to bottom, var(--first-dark-gradient-color), var(--second-dark-gradient-color));
+	padding-left: 35px;
+	padding-right: 35px;
+
+}
+
+.details-table {
+	margin-bottom: 50px;
+	margin-left: 35px;
+	margin-right: 35px;
+
+	border-collapse: collapse;
+}
+
+.details-table td {
+	padding: 14px 14px 14px 0px;
+	border-bottom: 2px solid var(--table-border-color);
+	vertical-align: top;
+}
+
+.details-table .account{
+	border-bottom: 2px solid var(--accent-table-border-color);
+}
+
+.details-table tr:last-child td {
+	border-bottom: none;
+}
+
+.detail-label {
+	font-weight: bold;
+	color: var(--bright-text-color);
+	width: 40%;
+	padding-right: 15px;
+}
+
+.detail-label.bold {
+	color: var(--second-heading-text-color)
+}
+
+.detail-value {
+	color: var(--bright-text-color);
+}
+
+@media (max-width: 1030px){
+
+	.college-info-header {
+
+		padding-left: 20px;
+		padding-right: 20px;
+
+	}
+
+	.college-details .college-info-header {
+		padding-left: 20px;
+		padding-right: 20px;
+
+	}
+
+}
+
+@media (max-width: 968px) {
+	.college-grid {
+		grid-template-columns: 1fr;
+	}
+
+	
+	
+	.college-info-header {
+		padding-left: 35px;
+		padding-right: 35px;
+	}
+	
+	.college-info-block {
+		padding-left: 35px;
+		padding-right: 35px;
+	}
+
+	.donwload-button {
+		margin-left: 35px;
+		margin-right: 35px;
+		margin-bottom: 35px;
+
+	}
+
+	.details-table {
+		margin-left: 35px;
+		margin-right: 35px;
+	}
+}
+
+@media (max-width: 768px) {
+
+	.college-info-header {
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+	
+	.college-info-block {
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+
+	.donwload-button {
+		margin-left: 25px;
+		margin-right: 25px;
+		margin-bottom: 25px;
+
+	}
+
+	.details-table {
+		margin-left: 25px;
+		margin-right: 25px;
+	}
+
+
+	.college-info h2 {
+		font-size: 1.8em;
+	}
+	
+	.details-table td {
+		display: block;
+		width: 100%;
+		padding: 10px 0;
+	}
+	
+	.detail-label {
+		width: 100%;
+		padding-right: 0;
+		margin-top: 15px;
+	}
+
+	.details-table .account.hidden {
+		border-bottom: 2px solid var(--table-border-color);
+	}
+	
+	.detail-label:first-child {
+		margin-top: 0;
+	}
+
+	.values-list {
+		padding-left: 0px;
+	}
+
+	.mission-list {
+		padding-left: 0px;
+	}
+
+}
+
+
