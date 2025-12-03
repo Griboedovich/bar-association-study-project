@@ -57,6 +57,9 @@ main {
 	--first-heading-text-color: var(--second-color);
 	--second-heading-text-color: var(--main-color);
 
+	--accent-buttons-text-color: var(--bright-text-color);
+	--ative-card-part-text-color: var(--bright-text-color);
+
 	--background-color:  #e5e5e5;
 	--card-background-color: white;
 	--icons-background-color: white;
@@ -129,6 +132,9 @@ body.dark-mode {
 	--first-heading-text-color: var(--light-main-color);
 	--second-heading-text-color: var(--light-main-color);
 
+	--accent-buttons-text-color: var(--bright-text-color);
+	--ative-card-part-text-color: var(--accent-text-color);
+	
 	--background-color:  #29373e;
 	--card-background-color: #1c2b33;
 	--icons-background-color: white;
@@ -200,6 +206,9 @@ body {
 
 	margin: 0; 
 	background-color: var(--background-color);
+
+
+	font-family: "Verdana";
 }
 
 @media (max-width: 650px){
@@ -246,7 +255,7 @@ header {
 }
 
 .engarde-logo {
-
+	position: relative;
 	display: flex;
 	align-items: center;
 }
@@ -295,6 +304,19 @@ header {
 	position: relative;
 	left: 3px;
 
+}
+
+.main-page-link{
+	position: absolute;
+
+	top: -5px;
+	bottom: -5px;
+	left: 15px;
+	right: -5px;
+
+	margin: 0;
+
+	z-index: 100;
 }
 
 .header-address {
@@ -629,6 +651,10 @@ header {
 	}
 
 
+	header .main-page-link{
+		left: 0px;;
+	}
+
 	#burger-label{
 		height: 25px; 
 		width: 30px;
@@ -855,7 +881,7 @@ main section{
 .download-button {
 	display: block;
 	background: var(--accent-color);
-	color: var(--bright-text-color);
+	color: var(--accent-buttons-text-color);
 
 	padding: 14px 30px;
 	margin: 50px;
@@ -1179,7 +1205,7 @@ main section{
 
 	width: 100%;
 
-	color: var(--bright-text-color);
+	color: var(--ative-card-part-text-color);
 	font-size: 1.25em;
 
 	background-color: var(--second-gradient-color);
@@ -1203,6 +1229,8 @@ main section{
 }
 
 .achievement {
+	color: var(--bright-text-color);
+
 	position: relative;
 
 	padding-top: 12.5px;
@@ -1288,7 +1316,6 @@ main section{
 	text-align: justify;
 	font-family: "Arial";
 
-	color: var(--bright-text-color);
 
 }
 
@@ -1534,10 +1561,11 @@ main section{
 .contact-button {
 	background-color: var(--accent-color);
 
-	color: var(--bright-text-color);
+	color: var(--accent-buttons-text-color);
 
 	border: none;
 	font-size: 1.1em;
+	font-weight: bold;
 
 	padding: 15px 40px;
 
@@ -1793,6 +1821,12 @@ main section{
 
 .logo-placeholder .engarde-logo .icon-image {
 	margin-left: 0px;
+}
+
+.logo-placeholder .engarde-logo .main-page-link{
+	left: -5px;
+
+	margin: 0;
 }
 
 .slogan {
