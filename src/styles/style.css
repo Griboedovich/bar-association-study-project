@@ -59,6 +59,7 @@ main {
 
 	--accent-buttons-text-color: var(--bright-text-color);
 	--ative-card-part-text-color: var(--bright-text-color);
+	--back-to-top-text-color: var(--bright-text-color);
 
 	--background-color:  #e5e5e5;
 	--card-background-color: white;
@@ -134,7 +135,8 @@ body.dark-mode {
 
 	--accent-buttons-text-color: var(--bright-text-color);
 	--ative-card-part-text-color: var(--accent-text-color);
-	
+	--back-to-top-text-color: var(--accent-color);
+
 	--background-color:  #29373e;
 	--card-background-color: #1c2b33;
 	--icons-background-color: white;
@@ -412,7 +414,7 @@ header {
 	width:100%;
 
 	font-size: 24px;
-	color: var(--accent-color);
+	color: var(--back-to-top-text-color);
 
 
 	background: linear-gradient(var(--second-color));
