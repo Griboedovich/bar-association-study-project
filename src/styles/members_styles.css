@@ -281,12 +281,36 @@
 }
 
 
-@media (max-width: 320px) {
+@media (max-width: 340px) {
 
 	.image-part .image-wrapper {
 		margin: 20px;
 	}
 
+}
+
+@media (hover: none) and (pointer: coarse){
+
+	.image-part:hover ~ .info-part-card .active-info-part-card,  .active-info-part-card:hover{
+		clip-path: inset(0% 100% 0% 0%);
+	}
+
+	.image-part.open~ .info-part-card .active-info-part-card{
+		clip-path: inset(0% 0% 0% 0%);
+	}
+
+}
+
+@media (max-width: 925px) and (hover: none) and (pointer: coarse){
+
+	.image-part:hover ~ .info-part-card .active-info-part-card,  .active-info-part-card:hover{
+		clip-path: inset(0% 0% 100% 0%);
+	}
+
+
+	.image-part.open~ .info-part-card .active-info-part-card{
+		clip-path: inset(0% 0% 0% 0%);
+	}
 }
 
 	/*===== End Members Section =====*/
